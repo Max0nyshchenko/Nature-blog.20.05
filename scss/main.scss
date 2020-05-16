@@ -1,0 +1,347 @@
+// vars
+$primary-color: #333333;
+$text-nav-color: #dce2e6;
+
+* {
+  font-family: 'Rasa', serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  // letter-spacing: 1px;
+  line-height: 1.2;
+}
+
+// Test element that couse horizontal scrollbar
+// * {
+//   border: 1px solid #f00 !important;
+// }
+
+body {
+  background-color: $primary-color;
+}
+
+.showcase-container {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 8vh 92vh;
+  overflow: hidden;
+
+  .mouse {
+    position: absolute;
+    z-index: 4;
+    top: 84.5vh;
+    left: 50vw;
+    width: 4.5rem;
+    height: 5.33rem;
+    border-radius: 33%;
+    border: 0.5rem solid $text-nav-color;
+    background: transparent;
+    transform: translate(-50%, 0);
+    cursor: pointer;
+
+    &:hover {
+      color: darken($text-nav-color, 30);
+      background: darken($text-nav-color, 30);
+      opacity: 0.5;
+    }
+
+    .scroll {
+      position: absolute;
+      top: 0.7rem;
+      left: 50%;
+      border-radius: 33%;
+      width: 0.5rem;
+      height: 1rem;
+      background: $text-nav-color;
+      transform: translate(-50%, 0);
+    }
+
+    .dot {
+      position: absolute;
+      top: 2rem;
+      left: 50%;
+      border-radius: 50%;
+      width: 0.5rem;
+      height: 0.5rem;
+      background: $text-nav-color;
+      animation: fall infinite 2s;
+    }
+  }
+
+  nav {
+    z-index: 20000;
+    height: 8vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    padding: 0 4.7rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+
+    color: $text-nav-color;
+    background-color: $primary-color;
+
+    ul {
+      list-style: none;
+    }
+    .menu-wrapper {
+      display: grid;
+      align-items: center;
+      justify-content: end;
+
+      .menu {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-items: center;
+        gap: 2rem;
+        font-size: 1.33rem;
+
+        li:hover {
+          color: lighten($text-nav-color, 30);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+h1 {
+  width: fit-content;
+  color: $text-nav-color;
+  font-size: 3rem;
+  letter-spacing: 0.2rem;
+  padding: 0;
+  word-spacing: 1rem;
+  margin: 0;
+
+  &:hover {
+    color: lighten($text-nav-color, 30);
+    cursor: pointer;
+  }
+}
+
+.main-content {
+  padding: 2rem 4rem;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+
+  .main-left {
+    .interesting-fact-wrapper {
+      position: relative;
+      .interesting-fact-text {
+        position: absolute;
+        width: 25vw;
+        padding: 1rem;
+        bottom: 10%;
+        left: 0;
+        background: rgba(196, 196, 196, 0.699);
+
+        h4 {
+          margin-bottom: 1rem;
+          font-size: 1.5rem;
+        }
+        .text {
+          text-align: justify;
+        }
+      }
+
+      img.interesting-fact-img {
+        width: calc(100% + 4rem);
+        margin-left: -4rem;
+        margin-top: 2rem;
+      }
+    }
+    .title {
+      font-size: 2rem;
+      padding: 2rem;
+      color: $text-nav-color;
+      width: fit-content;
+
+      &:hover {
+        color: darken($text-nav-color, 30);
+        cursor: pointer;
+      }
+
+      span {
+        font-weight: 900;
+        font-size: 2.5rem;
+      }
+    }
+
+    .articles-block {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.5rem;
+
+      .article {
+        display: grid;
+        grid-template-rows: 3rem 3rem 7rem;
+        grid-template-columns: 1fr 1fr;
+        border: 2px solid black;
+        padding: 1rem;
+
+        &:hover {
+          background: lighten($primary-color, 20);
+          cursor: pointer;
+          transform: translateY(-1rem);
+          transition: transform 0.25s;
+        }
+
+        h2 {
+          grid-row: 1 / 2;
+          grid-column: 1 / span 2;
+          font-size: 1.8rem;
+        }
+
+        p {
+          height: 100%;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          grid-row: 2/3;
+          grid-column: 1 / span 2;
+        }
+
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: contain;
+          grid-row: 3/4;
+          grid-column: 1/2;
+          overflow: hidden;
+        }
+
+        span {
+          grid-row: 3/4;
+          grid-column: 2/3;
+          align-self: end;
+          justify-self: end;
+
+          &:hover {
+            color: darken($text-nav-color, 30);
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+
+  .main-right {
+    overflow-x: hidden;
+    padding-top: 7.44rem;
+    display: grid;
+    grid-template-rows: 15rem auto auto;
+
+    .cloud {
+      .tagBall {
+        display: grid;
+        justify-content: end;
+        align-content: center;
+        height: 100%;
+        width: 100%;
+        position: relative;
+
+        .tag {
+          position: absolute;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .top-articles {
+      padding-left: 1rem;
+      .top-articles-header {
+        h2 {
+          font-size: 2rem;
+          padding: 2rem;
+          color: black;
+        }
+        background-color: #909090;
+        padding: 0.3rem;
+        text-align: center;
+      }
+
+      .articles-section {
+        padding: 1rem;
+        background-color: #c4c4c4;
+
+        .top-articles-article {
+          &:hover {
+            cursor: pointer;
+          }
+          margin-bottom: 2.3rem;
+        }
+
+        h2 {
+          text-align: center;
+        }
+        .category {
+          margin: 0.5rem 0;
+          text-align: end;
+          &:hover {
+            cursor: pointer;
+            color: lighten(black, 50);
+          }
+        }
+        .desc {
+          text-align: justify;
+        }
+      }
+    }
+  }
+}
+
+.showImg {
+  transform: translate(0%, 0%);
+  opacity: 1;
+  transition: 1s 0.25s;
+}
+
+.hideImg {
+  opacity: 0;
+  transform: translate(-100%, 0);
+}
+.showMainLB {
+  transform: translate(0, 0);
+  opacity: 1;
+  transition: 1s 0.25s;
+}
+
+.hideMainLB {
+  opacity: 0;
+  transform: translate(0, -2rem);
+}
+.showMainRB {
+  transform: translate(0, 0);
+  opacity: 1;
+  transition: 1s 0.25s;
+}
+
+.hideMainRB {
+  opacity: 0;
+  transform: translate(2rem, 0);
+}
+
+footer {
+  padding: 2rem;
+  background: darken($primary-color, 30);
+  color: $text-nav-color;
+  text-align: center;
+}
+
+@keyframes fall {
+  0% {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(-50%, 2rem);
+    opacity: 0;
+  }
+}
+
+@import 'media';

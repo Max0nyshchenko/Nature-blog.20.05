@@ -1,0 +1,132 @@
+@media screen and (max-width: 1024px) {
+  body {
+    .main-content-wrapper {
+      .main-content {
+        grid-template-columns: 70% 30%;
+
+        .main-left {
+          div.articles-block {
+            grid-template-columns: 1fr 1fr;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    .showcase-container {
+      nav {
+        min-height: 8vh;
+        height: auto;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        .menu-wrapper {
+          display: none;
+
+          .menu {
+            grid-template-columns: 1fr;
+            font-size: 2rem;
+          }
+        }
+      }
+    }
+
+    .main-content {
+      padding: 2rem;
+      .main-right {
+        .top-articles {
+          overflow: hidden;
+          h2 {
+            font-size: 1.6rem !important;
+            padding: 2rem 0 !important;
+          }
+
+          .articles-section {
+            .top-articles-article {
+              .name {
+                h2 {
+                  padding-bottom: 0rem !important;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .main-content {
+    grid-template-columns: 1fr !important;
+
+    .main-right {
+      grid-template-rows: auto auto !important;
+      padding-top: 0 !important;
+
+      .cloud {
+        display: none !important;
+      }
+
+      .top-articles {
+        padding-left: 0 !important;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  .interesting-fact-wrapper {
+    .interesting-fact-text {
+      width: 50vw !important;
+      height: 25vw !important;
+    }
+  }
+}
+
+@media screen and (max-width: 470px) {
+  nav {
+    padding: 0.1rem !important;
+
+    h1 {
+      font-size: 2rem !important;
+    }
+  }
+  .main-content {
+    padding: 0.5rem !important;
+    .main-left {
+      div.title {
+        font-size: 1.6rem !important;
+      }
+    }
+  }
+  .articles-block {
+    grid-template-columns: 1fr !important;
+  }
+  .interesting-fact-wrapper {
+    .interesting-fact-text {
+      position: relative !important;
+      margin-bottom: 0.5rem;
+      width: 100% !important;
+      height: auto !important;
+    }
+  }
+}
+
+// MENU
+.burger {
+  z-index: 30000;
+  position: fixed;
+  cursor: pointer;
+  right: 2rem;
+}
+
+@for $i from 1 to 4 {
+  .line#{$i} {
+    background-color: white;
+    margin-bottom: 0.44rem;
+    width: 3rem;
+    height: 0.3rem;
+  }
+}
