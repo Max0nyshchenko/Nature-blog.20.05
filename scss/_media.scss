@@ -125,10 +125,26 @@
   right: 2rem;
   top: 2.3vh;
   display: none;
+  transition: all 0.5s ease-out;
+}
+
+.burger.X {
+  transform: rotate(180deg);
+
+  .line1 {
+    transform: rotate(45deg) translate(7px, 8px);
+  }
+  .line2 {
+    opacity: 0;
+  }
+  .line3 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
 }
 
 @for $i from 1 to 4 {
   .line#{$i} {
+    transition: all 0.5s ease-out;
     background-color: white;
     margin-bottom: 0.3rem;
     width: 2rem;
