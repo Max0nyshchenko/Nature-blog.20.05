@@ -1,13 +1,13 @@
 function cloudTag(selector, options) {
   let el = document.querySelector(selector);
   let defaults = {
-    tag: 'tag',
+    tag: "tag",
     ballSize: 200,
   };
   let opts = Object.assign({}, defaults, options);
   let tagEle =
-      'querySelectorAll' in document
-        ? document.querySelectorAll('.' + opts.tag)
+      "querySelectorAll" in document
+        ? document.querySelectorAll("." + opts.tag)
         : getClass(opts.tag),
     paper = el;
   (RADIUS = opts.ballSize),
@@ -27,7 +27,7 @@ function cloudTag(selector, options) {
       document.documentElement.scrollTop);
 
   function getClass(className) {
-    var ele = document.getElementsByTagName('*');
+    var ele = document.getElementsByTagName("*");
     var classEle = [];
     for (var i = 0; i < ele.length; i++) {
       var cn = ele[i].className;
@@ -50,17 +50,7 @@ function cloudTag(selector, options) {
       var y = RADIUS * Math.sin(a) * Math.sin(b);
       var z = RADIUS * Math.cos(a);
       var t = new tag(tagEle[i], x, y, z);
-      tagEle[i].style.color =
-        'rgb(' +
-        //parseInt(Math.random() * 0)
-        255 +
-        ',' +
-        //parseInt(Math.random() * 0)
-        255 +
-        ',' +
-        //parseInt(Math.random() * 0)
-        255 +
-        ')';
+      tagEle[i].style.color = "rgb(" + 255 + "," + 255 + "," + 255 + ")";
       tags.push(t);
       t.move();
     }
@@ -82,8 +72,8 @@ function cloudTag(selector, options) {
     }, 55);
   }
 
-  if ('addEventListener' in window) {
-    paper.addEventListener('mousemove', function (event) {
+  if ("addEventListener" in window) {
+    paper.addEventListener("mousemove", function (event) {
       var x = event.clientX - EX - CX;
       var y = event.clientY - EY - CY;
       // angleY = -x* (Math.sqrt(Math.pow(x , 2) + Math.pow(y , 2)) > RADIUS/4 ? 0.0002 : 0.0001);
@@ -92,7 +82,7 @@ function cloudTag(selector, options) {
       angleX = y * 0.0001;
     });
   } else {
-    paper.attachEvent('onmousemove', function (event) {
+    paper.attachEvent("onmousemove", function (event) {
       var x = event.clientX - EX - CX;
       var y = event.clientY - EY - CY;
       angleY = x * 0.0001;
@@ -133,12 +123,12 @@ function cloudTag(selector, options) {
     move: function () {
       var scale = fallLength / (fallLength - this.z);
       var alpha = (this.z + RADIUS) / (2 * RADIUS);
-      this.ele.style.fontSize = 15 * scale + 'px';
+      this.ele.style.fontSize = 15 * scale + "px";
       this.ele.style.opacity = alpha + 0.5;
-      this.ele.style.filter = 'alpha(opacity = ' + (alpha + 0.5) * 100 + ')';
+      this.ele.style.filter = "alpha(opacity = " + (alpha + 0.5) * 100 + ")";
       this.ele.style.zIndex = parseInt(scale * 100);
-      this.ele.style.left = this.x + CX - this.ele.offsetWidth / 2 + 'px';
-      this.ele.style.top = this.y + CY - this.ele.offsetHeight / 2 + 'px';
+      this.ele.style.left = this.x + CX - this.ele.offsetWidth / 2 + "px";
+      this.ele.style.top = this.y + CY - this.ele.offsetHeight / 2 + "px";
     },
   };
   innit();
@@ -147,10 +137,10 @@ function cloudTag(selector, options) {
 
 function tagBallSize() {
   if (window.innerWidth > 800) {
-    cloudTag('.tagBall', { ballSize: 100 });
+    cloudTag(".tagBall", { ballSize: 100 });
   } else {
-    cloudTag('.tagBall', { ballSize: 65 });
+    cloudTag(".tagBall", { ballSize: 65 });
   }
 }
 tagBallSize();
-window.addEventListener('resize', tagBallSize);
+window.addEventListener("resize", tagBallSize);

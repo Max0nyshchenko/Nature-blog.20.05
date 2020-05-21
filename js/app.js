@@ -9,6 +9,32 @@ const showcaseCont = document.querySelector(".showcase-container");
 const menuWrapper = document.querySelector(".menu-wrapper");
 const nav = document.querySelector("nav");
 const burger = document.querySelector(".burger");
+const tagBoxWrap = document.querySelector(".tagBox-wrap");
+const menuTags = document.querySelector(".menuTags");
+const tagBoxCloser = document.querySelector(".tagBox-closer");
+
+// Show TagBox
+let tagBoxState = 0;
+function tagBoxListn() {
+  menuTags.addEventListener("click", () => {
+    if (tagBoxState == 0) {
+      tagBoxWrap.classList.add("showTag");
+      clicked = 0;
+      if (window.innerWidth <= 800) {
+        menuWrapper.style.display = "none";
+        burger.classList.remove("X");
+      }
+      tagBoxState++;
+    } else if (tagBoxState == 1) {
+      tagBoxWrap.classList.remove("showTag");
+      tagBoxState = 0;
+    }
+  });
+  tagBoxCloser.addEventListener("click", () => {
+    tagBoxWrap.classList.remove("showTag");
+    tagBoxState = 0;
+  });
+}
 
 // ANIMATION PART
 let scroller =
@@ -79,4 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // MENU
   menuResp();
+
+  // TagBox
+  tagBoxListn();
 });

@@ -1,3 +1,53 @@
+.tagBox-wrap {
+  display: -ms-grid;
+  display: grid;
+  position: fixed;
+  top: 50vh;
+  left: 50vw;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  padding: 1rem;
+  z-index: -100;
+  opacity: 0;
+}
+
+.tagBox-wrap .tagBox {
+  padding: 1rem 2rem;
+  background-color: #121212;
+  border-radius: 10px;
+}
+
+.tagBox-wrap .tagBox .tagBoxTag {
+  text-align: center;
+  color: #dce2e6;
+  display: block;
+  margin: 10px 0;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+.tagBox-wrap .tagBox .tagBoxTag:hover {
+  color: white;
+}
+
+.showTag {
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+  z-index: 10 !important;
+  opacity: 1 !important;
+}
+
+.tagBox-closer {
+  font-size: 2rem;
+  cursor: pointer;
+  -ms-grid-column-align: end;
+      justify-self: end;
+}
+
+.tagBox-closer:hover {
+  color: #999999;
+}
+
 * {
   font-family: "Rasa", serif;
   padding: 0;

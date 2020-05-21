@@ -1,0 +1,47 @@
+$primary-color: #333333;
+$text-nav-color: #dce2e6;
+
+.tagBox-wrap {
+  display: grid;
+  position: fixed;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  padding: 1rem;
+  z-index: -100;
+  opacity: 0;
+  .tagBox {
+    padding: 1rem 2rem;
+    background-color: darken($primary-color, 13);
+    border-radius: 10px;
+
+    .tagBoxTag {
+      text-align: center;
+      color: $text-nav-color;
+      display: block;
+      margin: 10px 0;
+      font-size: 1.5rem;
+      text-decoration: none;
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+}
+
+.showTag {
+  transition: opacity 0.5s;
+  z-index: 10 !important;
+  opacity: 1 !important;
+}
+
+.tagBox-closer {
+  font-size: 2rem;
+  cursor: pointer;
+  justify-self: end;
+
+  &:hover {
+    color: lighten(black, 60);
+  }
+}
