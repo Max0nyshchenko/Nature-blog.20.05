@@ -77,6 +77,8 @@ body {
   position: fixed;
   top: 0;
   right: 0;
+  left: 0;
+  overflow: hidden;
   width: 100vw;
   padding: 0 4.7rem;
   display: -ms-grid;
@@ -87,7 +89,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   color: #dce2e6;
-  background-color: #333333;
+  background-color: #000000d8;
 }
 
 .showcase-container nav ul {
@@ -138,6 +140,7 @@ h1:hover {
 }
 
 .main-content {
+  overflow-x: hidden;
   padding: 2rem 4rem;
   display: -ms-grid;
   display: grid;
@@ -457,6 +460,12 @@ footer {
         grid-template-columns: 1fr;
     font-size: 2rem;
   }
+  body .showcase-container nav .menu-wrapper .menu li:first-child {
+    padding-top: 1rem;
+  }
+  body .showcase-container nav .menu-wrapper .menu li:last-child {
+    padding-bottom: 1rem;
+  }
   body .main-content {
     padding: 2rem;
   }
@@ -496,6 +505,11 @@ footer {
 }
 
 @media screen and (max-width: 470px) {
+  .nature-blog {
+    -ms-grid-column-align: start;
+        justify-self: start;
+    padding-left: 10px;
+  }
   nav {
     padding: 0.1rem !important;
   }
@@ -518,6 +532,9 @@ footer {
     width: 100% !important;
     height: auto !important;
   }
+  .showcase-container nav .burger {
+    right: 10px;
+  }
 }
 
 .burger {
@@ -537,8 +554,8 @@ footer {
 }
 
 .burger.X .line1 {
-  -webkit-transform: rotate(45deg) translate(7px, 8px);
-          transform: rotate(45deg) translate(7px, 8px);
+  -webkit-transform: rotate(45deg) translate(5px, 6px);
+          transform: rotate(45deg) translate(5px, 6px);
 }
 
 .burger.X .line2 {
@@ -546,8 +563,8 @@ footer {
 }
 
 .burger.X .line3 {
-  -webkit-transform: rotate(-45deg) translate(-5px, 6px);
-          transform: rotate(-45deg) translate(-5px, 6px);
+  -webkit-transform: rotate(-45deg) translate(5px, -6px);
+          transform: rotate(-45deg) translate(5px, -6px);
 }
 
 .line1 {
