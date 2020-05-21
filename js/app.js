@@ -53,9 +53,11 @@ function menuResp() {
     if (clicked == 0) {
       menuWrapper.style.display = "grid";
       clicked++;
+      burger.classList.add("X");
     } else if (clicked == 1) {
       menuWrapper.style.display = "none";
       clicked = 0;
+      burger.classList.remove("X");
     }
   });
 }
