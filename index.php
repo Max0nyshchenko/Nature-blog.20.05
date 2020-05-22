@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Rasa:wght@700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/main.min.css" />
+  <title>NetNature Blog</title>
+</head>
+
+<body>
+  <!-- TAG CLOUD -->
+  <div class="tagBox-wrap">
+    <span class="tagBox-closer">&#215;</span>
+    <div class="tagBox">
+      <a class="tagBoxTag" target="_blank" href="#">Psychological Diseases</a>
+      <a class="tagBoxTag" target="_blank" href="#">Predators Behaviour</a>
+      <a class="tagBoxTag" target="_blank" href="#">Other</a>
+      <a class="tagBoxTag" target="_blank" href="#">Events</a>
+      <a class="tagBoxTag" target="_blank" href="#">Help</a>
+      <a class="tagBoxTag" target="_blank" href="#">Directory</a>
+      <a class="tagBoxTag" target="_blank" href="#">Travel</a>
+      <a class="tagBoxTag" target="_blank" href="#">Nature</a>
+      <a class="tagBoxTag" target="_blank" href="#">Art</a>
+      <a class="tagBoxTag" target="_blank" href="#">Health</a>
+    </div>
+  </div>
+  <!-- SHOWCASE -->
+  <div class="showcase-container">
+    <!-- NAV -->
+    <nav>
+      <div class="nature-blog">
+        <h1>Nature Blog</h1>
+      </div>
+      <div class="menu-wrapper">
+        <ul class="menu">
+          <li>Home</li>
+          <li>About Me</li>
+          <li class="menuTags">Tags</li>
+        </ul>
+      </div>
+      <div class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+    </nav>
+
+    <!-- SHOWCASE VIDEO -->
+    <div class="showcase-video-wrapper">
+      <video class="showcase-video" autoplay="autoplay" muted="muted" loop>
+        <source src="/media/Wolf - 27516.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <a href="#section1" class="mouse">
+        <div class="scroll"></div>
+        <div class="dot"></div>
+      </a>
+    </div>
+  </div>
+
+  <!-- MAIN SECTION -->
+  <section class="main-content-wrapper">
+    <main id="section1" class="main-content">
+      <!-- LEFT MAIN COLON -->
+      <div class="main-left show-on-scroll">
+        <div class="title">Newest Articles <span> &#187;</span></div>
+        <div class="articles-block">
+          <div class="article">
+            <h2>Article Title</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est
+              deserunt omnis voluptas tempora, nobis debitis nam similique?
+              Fugit illo maxime cum magnam esse incidunt veniam tempora,
+              omnis, quidem, aliquid doloribus!
+            </p>
+            <img src="/media/wild-157677.svg" alt="" />
+            <span>Read More &#187;</span>
+          </div>
+          <div class="article">
+            <h2>Article Title</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est
+              deserunt omnis voluptas tempora, nobis debitis nam similique?
+              Fugit illo maxime cum magnam esse incidunt veniam tempora,
+              omnis, quidem, aliquid doloribus!
+            </p>
+            <img src="/media/wolf-2648542.svg" alt="" />
+            <span>Read More &#187;</span>
+          </div>
+          <div class="article">
+            <h2>Article Title</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est
+              deserunt omnis voluptas tempora, nobis debitis nam similique?
+              Fugit illo maxime cum magnam esse incidunt veniam tempora,
+              omnis, quidem, aliquid doloribus!
+            </p>
+            <img src="/media/wolf-30695.svg" alt="" />
+            <span>Read More &#187;</span>
+          </div>
+        </div>
+        <div class="title">
+          Psychological diseases among Animals<span> &#187;</span>
+        </div>
+        <div class="articles-block">
+          <div class="article">
+            <h2>Article Title</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est
+              deserunt omnis voluptas tempora, nobis debitis nam similique?
+              Fugit illo maxime cum magnam esse incidunt veniam tempora,
+              omnis, quidem, aliquid doloribus!
+            </p>
+            <img src="/media/wild-157677.svg" alt="" />
+            <span>Read More &#187;</span>
+          </div>
+          <div class="article">
+            <h2>Article Title</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est
+              deserunt omnis voluptas tempora, nobis debitis nam similique?
+              Fugit illo maxime cum magnam esse incidunt veniam tempora,
+              omnis, quidem, aliquid doloribus!
+            </p>
+            <img src="/media/wolf-2648542.svg" alt="" />
+            <span>Read More &#187;</span>
+          </div>
+          <div class="article">
+            <h2>Article Title</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est
+              deserunt omnis voluptas tempora, nobis debitis nam similique?
+              Fugit illo maxime cum magnam esse incidunt veniam tempora,
+              omnis, quidem, aliquid doloribus!
+            </p>
+            <img src="/media/wolf-30695.svg" alt="" />
+            <span>Read More &#187;</span>
+          </div>
+        </div>
+
+        <div class="title">
+          Predators Behaviour in Nature..<span> &#187;</span>
+        </div>
+        <div class="articles-block">
+          <div class="article">
+            <h2>Article Title</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est
+              deserunt omnis voluptas tempora, nobis debitis nam similique?
+              Fugit illo maxime cum magnam esse incidunt veniam tempora,
+              omnis, quidem, aliquid doloribus!
+            </p>
+            <img src="/media/wild-157677.svg" alt="" />
+            <span>Read More &#187;</span>
+          </div>
+          <div class="article">
+            <h2>Article Title</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est
+              deserunt omnis voluptas tempora, nobis debitis nam similique?
+              Fugit illo maxime cum magnam esse incidunt veniam tempora,
+              omnis, quidem, aliquid doloribus!
+            </p>
+            <img src="/media/wolf-2648542.svg" alt="" />
+            <span>Read More &#187;</span>
+          </div>
+          <div class="article">
+            <h2>Article Title</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est
+              deserunt omnis voluptas tempora, nobis debitis nam similique?
+              Fugit illo maxime cum magnam esse incidunt veniam tempora,
+              omnis, quidem, aliquid doloribus!
+            </p>
+            <img src="/media/wolf-30695.svg" alt="" />
+            <span onscroll="onscroll()">Read More &#187;</span>
+          </div>
+        </div>
+        <div class="interesting-fact-wrapper">
+          <img class="interesting-fact-img" src="/media/gregoire-bertaud-wK_DZlAJJ_Q-unsplash.jpg" alt="" />
+          <div class="interesting-fact-text">
+            <h4>Lorem, ipsum.</h4>
+            <p class="text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Laudantium, et?
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- MAIN RIGHT COLON -->
+      <div class="main-right">
+        <!-- TAG CLOUD -->
+        <div class="cloud">
+          <div class="tagBall">
+            <a class="tag" target="_blank" href="#">Psychological Diseases</a>
+            <a class="tag" target="_blank" href="#">Predators Behaviour</a>
+            <a class="tag" target="_blank" href="#">Other</a>
+            <a class="tag" target="_blank" href="#">Events</a>
+            <a class="tag" target="_blank" href="#">Help</a>
+            <a class="tag" target="_blank" href="#">Directory</a>
+            <a class="tag" target="_blank" href="#">Travel</a>
+            <a class="tag" target="_blank" href="#">Nature</a>
+            <a class="tag" target="_blank" href="#">Art</a>
+            <a class="tag" target="_blank" href="#">Health</a>
+          </div>
+        </div>
+        <!-- TOP ARTICLES -->
+        <div class="top-articles">
+          <div class="top-articles-header">
+            <h2>Top Articles</h2>
+          </div>
+          <div class="articles-section">
+            <div class="top-articles-article">
+              <div class="name">
+                <h2>Name of the article</h2>
+              </div>
+              <div class="category">Category</div>
+              <div class="desc">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Reprehenderit, officia.
+              </div>
+            </div>
+            <div class="top-articles-article">
+              <div class="name">
+                <h2>Name of the article</h2>
+              </div>
+              <div class="category">Category</div>
+              <div class="desc">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Reprehenderit, officia.
+              </div>
+            </div>
+            <div class="top-articles-article">
+              <div class="name">
+                <h2>Name of the article</h2>
+              </div>
+              <div class="category">Category</div>
+              <div class="desc">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Reprehenderit, officia.
+              </div>
+            </div>
+            <div class="top-articles-article">
+              <div class="name">
+                <h2>Name of the article</h2>
+              </div>
+              <div class="category">Category</div>
+              <div class="desc">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Reprehenderit, officia.
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- TOP COMMENTS -->
+        <div class="top-articles">
+          <div class="top-articles-header">
+            <h2>Top Comments</h2>
+          </div>
+          <div class="articles-section">
+            <div class="top-articles-article">
+              <div class="name">
+                <h2>Name of the comment</h2>
+              </div>
+              <div class="category">Category</div>
+              <div class="desc">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Reprehenderit, officia.
+              </div>
+            </div>
+            <div class="top-articles-article">
+              <div class="name">
+                <h2>Name of the comment</h2>
+              </div>
+              <div class="category">Category</div>
+              <div class="desc">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Reprehenderit, officia.
+              </div>
+            </div>
+            <div class="top-articles-article">
+              <div class="name">
+                <h2>Name of the comment</h2>
+              </div>
+              <div class="category">Category</div>
+              <div class="desc">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Reprehenderit, officia.
+              </div>
+            </div>
+            <div class="top-articles-article">
+              <div class="name">
+                <h2>Name of the comment</h2>
+              </div>
+              <div class="category">Category</div>
+              <div class="desc">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Reprehenderit, officia.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </section>
+  <!-- FOOTER -->
+  <footer>
+    <h2>Footer</h2>
+  </footer>
+</body>
+<script src="/js/cloud.js"></script>
+<script src="/js/app.js"></script>
+
+</html>
