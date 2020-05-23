@@ -570,6 +570,10 @@ div.showcase-container.articlePHP-showcase {
   margin: 0.3rem 0;
 }
 
+#comment-form textarea {
+  resize: vertical;
+}
+
 #comment-form button {
   font-size: 1rem;
   font-weight: bold;
@@ -583,7 +587,7 @@ div.showcase-container.articlePHP-showcase {
   content: "";
   width: 70vw;
   background-color: #0d0d0d;
-  height: 50vh;
+  height: 100vh;
   position: absolute;
   z-index: -1;
   -webkit-transform: translate(-10vw, 0px);

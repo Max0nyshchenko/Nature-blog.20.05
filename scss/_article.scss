@@ -66,6 +66,10 @@ div.showcase-container.articlePHP-showcase {
     margin: 0.3rem 0;
   }
 
+  textarea {
+    resize: vertical;
+  }
+
   button {
     font-size: 1rem;
     font-weight: bold;
@@ -79,7 +83,7 @@ div.showcase-container.articlePHP-showcase {
     content: "";
     width: 70vw;
     background-color: darken(#333, 15);
-    height: 50vh;
+    height: 100vh;
     position: absolute;
     z-index: -1;
     transform: translate(-10vw, 0px);
