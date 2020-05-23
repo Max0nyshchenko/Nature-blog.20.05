@@ -31,7 +31,7 @@ require "../includes/config.php";
     </div>
   </div>
   <!-- SHOWCASE -->
-  <div class="showcase-container">
+  <div class="showcase-container articlePHP-showcase">
     <!-- NAV -->
     <nav>
       <div class="nature-blog">
@@ -54,16 +54,55 @@ require "../includes/config.php";
 
   <!-- MAIN SECTION -->
   <section class="main-content-wrapper">
-    <main id="section1" class="main-content">
+    <main id="section1" class="main-content articlephp-main-content">
 
+      <!-- Article -->
+      <div class="article articlephp-article">
+        <img src="../media/thomas-bonometti-dtfyRuKG7UY-unsplash.jpg" alt="" />
+        <h2>Article Title</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est
+          deserunt omnis voluptas tempora, nobis debitis nam similique?
+          Fugit illo maxime cum magnam esse incidunt veniam tempora,
+          omnis, quidem, aliquid doloribus!
+        </p>
+        <p class="articlephp-views">20202 views</p>
+      </div>
 
+      <!-- Comment -->
+      <div class="articlephp-comments-wrap">
+        <div class="articlephp-comments">
+          <div class="articlephp-comment">
+            <img src="../media/wolf-30695.svg" alt="">
+            <div class="usr-name">Soem Uno</div>
+            <div class="usr-comment">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi error magni vitae, at dignissimos ut itaque? Laboriosam, reiciendis. Officia debitis excepturi perspiciatis vero nulla pariatur iusto nemo quis recusandae voluptatibus?</div>
+          </div>
+          <div class="articlephp-comment">
+            <img src="../media/wolf-30695.svg" alt="">
+            <div class="usr-name">Soem Uno</div>
+            <div class="usr-comment">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi error magni vitae, at dignissimos ut itaque? Laboriosam, reiciendis. Officia debitis excepturi perspiciatis vero nulla pariatur iusto nemo quis recusandae voluptatibus?</div>
+          </div>
+          <div class="articlephp-comment">
+            <img src="../media/wolf-30695.svg" alt="">
+            <div class="usr-name">Soem Uno</div>
+            <div class="usr-comment">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi error magni vitae, at dignissimos ut itaque? Laboriosam, reiciendis. Officia debitis excepturi perspiciatis vero nulla pariatur iusto nemo quis recusandae voluptatibus?</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LeaveComment Area -->
+      <form action="">
+        <input type="text" name="username" id="username">
+        <input type="text" name="nickname" id="nickname">
+      </form>
     </main>
   </section>
+
   <!-- FOOTER -->
   <footer>
     <h2>Footer</h2>
   </footer>
 </body>
-<script src="../js/app.js"></script>
+<script src="../js/article.js"></script>
 
 </html>
