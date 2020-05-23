@@ -547,6 +547,55 @@ div.showcase-container.articlePHP-showcase {
   grid-row-end: 3;
 }
 
+#comment-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-width: 50vw;
+  max-width: 60vw;
+  justify-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 auto;
+}
+
+#comment-form input,
+#comment-form textarea,
+#comment-form button {
+  margin: 0.3rem 0;
+}
+
+#comment-form button {
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  width: 30%;
+  margin-left: 70%;
+  cursor: pointer;
+}
+
+#comment-form::after {
+  content: "";
+  width: 70vw;
+  background-color: #0d0d0d;
+  height: 50vh;
+  position: absolute;
+  z-index: -1;
+  -webkit-transform: translate(-10vw, 0px);
+          transform: translate(-10vw, 0px);
+}
+
+.articlephp-comments-wrap h1 {
+  text-align: center;
+  width: 100%;
+  margin-top: 3rem;
+}
+
 @media screen and (max-width: 1024px) {
   body .main-content-wrapper .main-content {
     -ms-grid-columns: 70% 30%;

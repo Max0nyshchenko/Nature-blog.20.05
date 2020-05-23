@@ -71,6 +71,7 @@ require "../includes/config.php";
 
       <!-- Comment -->
       <div class="articlephp-comments-wrap">
+        <h1>Comment Zone</h1>
         <div class="articlephp-comments">
           <div class="articlephp-comment">
             <img src="../media/wolf-30695.svg" alt="">
@@ -91,9 +92,11 @@ require "../includes/config.php";
       </div>
 
       <!-- LeaveComment Area -->
-      <form action="">
-        <input type="text" name="username" id="username">
-        <input type="text" name="nickname" id="nickname">
+      <form id="comment-form" action="">
+        <input type="text" name="username" id="username" placeholder="Username...">
+        <input type="text" name="nickname" id="nickname" placeholder="Nickname...">
+        <textarea name="comment_php" id="com" cols="30" rows="10" placeholder="Write your comment right here..."></textarea>
+        <button type="submit">Submit</button>
       </form>
     </main>
   </section>

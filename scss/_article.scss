@@ -50,3 +50,44 @@ div.showcase-container.articlePHP-showcase {
     grid-row-end: 3;
   }
 }
+
+#comment-form {
+  display: flex;
+  flex-direction: column;
+  min-width: 50vw;
+  max-width: 60vw;
+  justify-items: center;
+  justify-content: center;
+  margin: 0 auto;
+
+  input,
+  textarea,
+  button {
+    margin: 0.3rem 0;
+  }
+
+  button {
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    width: 30%;
+    margin-left: 70%;
+    cursor: pointer;
+  }
+
+  &::after {
+    content: "";
+    width: 70vw;
+    background-color: darken(#333, 15);
+    height: 50vh;
+    position: absolute;
+    z-index: -1;
+    transform: translate(-10vw, 0px);
+  }
+}
+
+.articlephp-comments-wrap h1 {
+  text-align: center;
+  width: 100%;
+  margin-top: 3rem;
+}
