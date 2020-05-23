@@ -106,9 +106,15 @@ body {
         gap: 2rem;
         font-size: 1.33rem;
 
-        li:hover {
-          color: lighten($text-nav-color, 30);
-          cursor: pointer;
+        a {
+          color: $text-nav-color !important;
+          text-decoration: none !important;
+          font-size: "Rasa", serif !important;
+
+          &:hover {
+            color: lighten($text-nav-color, 30) !important;
+            cursor: pointer !important;
+          }
         }
       }
     }

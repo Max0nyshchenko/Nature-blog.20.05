@@ -167,9 +167,15 @@ body {
   font-size: 1.33rem;
 }
 
-.showcase-container nav .menu-wrapper .menu li:hover {
-  color: white;
-  cursor: pointer;
+.showcase-container nav .menu-wrapper .menu a {
+  color: #dce2e6 !important;
+  text-decoration: none !important;
+  font-size: "Rasa", serif !important;
+}
+
+.showcase-container nav .menu-wrapper .menu a:hover {
+  color: white !important;
+  cursor: pointer !important;
 }
 
 h1 {
