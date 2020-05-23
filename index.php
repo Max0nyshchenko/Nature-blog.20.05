@@ -1,3 +1,7 @@
+<?php
+require "includes/config.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,8 +9,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://fonts.googleapis.com/css2?family=Rasa:wght@700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/main.min.css" />
-  <title>NetNature Blog</title>
+  <link rel="stylesheet" href="css/main.min.css" />
+  <title><?php echo $config['title']; ?></title>
 </head>
 
 <body>
@@ -31,7 +35,7 @@
     <!-- NAV -->
     <nav>
       <div class="nature-blog">
-        <h1>Nature Blog</h1>
+        <h1><?php echo $config['title']; ?></h1>
       </div>
       <div class="menu-wrapper">
         <ul class="menu">
@@ -50,7 +54,7 @@
     <!-- SHOWCASE VIDEO -->
     <div class="showcase-video-wrapper">
       <video class="showcase-video" autoplay="autoplay" muted="muted" loop>
-        <source src="/media/Wolf - 27516.mp4" type="video/mp4" />
+        <source src="media/Wolf - 27516.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       <a href="#section1" class="mouse">
@@ -75,7 +79,7 @@
               Fugit illo maxime cum magnam esse incidunt veniam tempora,
               omnis, quidem, aliquid doloribus!
             </p>
-            <img src="/media/wild-157677.svg" alt="" />
+            <img src="media/wild-157677.svg" alt="" />
             <span>Read More &#187;</span>
           </div>
           <div class="article">
@@ -86,7 +90,7 @@
               Fugit illo maxime cum magnam esse incidunt veniam tempora,
               omnis, quidem, aliquid doloribus!
             </p>
-            <img src="/media/wolf-2648542.svg" alt="" />
+            <img src="media/wolf-2648542.svg" alt="" />
             <span>Read More &#187;</span>
           </div>
           <div class="article">
@@ -97,7 +101,7 @@
               Fugit illo maxime cum magnam esse incidunt veniam tempora,
               omnis, quidem, aliquid doloribus!
             </p>
-            <img src="/media/wolf-30695.svg" alt="" />
+            <img src="media/wolf-30695.svg" alt="" />
             <span>Read More &#187;</span>
           </div>
         </div>
@@ -113,7 +117,7 @@
               Fugit illo maxime cum magnam esse incidunt veniam tempora,
               omnis, quidem, aliquid doloribus!
             </p>
-            <img src="/media/wild-157677.svg" alt="" />
+            <img src="media/wild-157677.svg" alt="" />
             <span>Read More &#187;</span>
           </div>
           <div class="article">
@@ -124,7 +128,7 @@
               Fugit illo maxime cum magnam esse incidunt veniam tempora,
               omnis, quidem, aliquid doloribus!
             </p>
-            <img src="/media/wolf-2648542.svg" alt="" />
+            <img src="media/wolf-2648542.svg" alt="" />
             <span>Read More &#187;</span>
           </div>
           <div class="article">
@@ -135,7 +139,7 @@
               Fugit illo maxime cum magnam esse incidunt veniam tempora,
               omnis, quidem, aliquid doloribus!
             </p>
-            <img src="/media/wolf-30695.svg" alt="" />
+            <img src="media/wolf-30695.svg" alt="" />
             <span>Read More &#187;</span>
           </div>
         </div>
@@ -152,7 +156,7 @@
               Fugit illo maxime cum magnam esse incidunt veniam tempora,
               omnis, quidem, aliquid doloribus!
             </p>
-            <img src="/media/wild-157677.svg" alt="" />
+            <img src="media/wild-157677.svg" alt="" />
             <span>Read More &#187;</span>
           </div>
           <div class="article">
@@ -163,7 +167,7 @@
               Fugit illo maxime cum magnam esse incidunt veniam tempora,
               omnis, quidem, aliquid doloribus!
             </p>
-            <img src="/media/wolf-2648542.svg" alt="" />
+            <img src="media/wolf-2648542.svg" alt="" />
             <span>Read More &#187;</span>
           </div>
           <div class="article">
@@ -174,12 +178,12 @@
               Fugit illo maxime cum magnam esse incidunt veniam tempora,
               omnis, quidem, aliquid doloribus!
             </p>
-            <img src="/media/wolf-30695.svg" alt="" />
+            <img src="media/wolf-30695.svg" alt="" />
             <span onscroll="onscroll()">Read More &#187;</span>
           </div>
         </div>
         <div class="interesting-fact-wrapper">
-          <img class="interesting-fact-img" src="/media/gregoire-bertaud-wK_DZlAJJ_Q-unsplash.jpg" alt="" />
+          <img class="interesting-fact-img" src="media/gregoire-bertaud-wK_DZlAJJ_Q-unsplash.jpg" alt="" />
           <div class="interesting-fact-text">
             <h4>Lorem, ipsum.</h4>
             <p class="text">
@@ -310,7 +314,7 @@
     <h2>Footer</h2>
   </footer>
 </body>
-<script src="/js/cloud.js"></script>
-<script src="/js/app.js"></script>
+<script src="js/cloud.js"></script>
+<script src="js/app.js"></script>
 
 </html>
