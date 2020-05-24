@@ -517,10 +517,13 @@ div.showcase-container.articlePHP-showcase {
 .articlephp-main-content {
   -ms-grid-columns: 1fr !important;
       grid-template-columns: 1fr !important;
+  padding-bottom: 0 !important;
+  padding-top: 0 !important;
 }
 
 .articlephp-comments {
   margin: 1rem 0;
+  margin-bottom: 0;
   padding: 2rem;
   background: grey;
   border-radius: 1rem;
@@ -555,13 +558,13 @@ div.showcase-container.articlePHP-showcase {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  min-width: 50vw;
-  max-width: 60vw;
+  background: #0d0d0d;
+  padding: 2rem 4rem;
+  margin: 0 4rem;
   justify-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin: 0 auto;
 }
 
 #comment-form input,
@@ -581,17 +584,6 @@ div.showcase-container.articlePHP-showcase {
   width: 30%;
   margin-left: 70%;
   cursor: pointer;
-}
-
-#comment-form::after {
-  content: "";
-  width: 70vw;
-  background-color: #0d0d0d;
-  height: 100vh;
-  position: absolute;
-  z-index: -1;
-  -webkit-transform: translate(-10vw, 0px);
-          transform: translate(-10vw, 0px);
 }
 
 .articlephp-comments-wrap h1 {

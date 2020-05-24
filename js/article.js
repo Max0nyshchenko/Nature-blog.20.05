@@ -12,6 +12,7 @@ const burger = document.querySelector(".burger");
 const tagBoxWrap = document.querySelector(".tagBox-wrap");
 const menuTags = document.querySelector(".menuTags");
 const tagBoxCloser = document.querySelector(".tagBox-closer");
+const commentForm = document.querySelector("#comment-form");
 
 // Show TagBox
 let tagBoxState = 0;
@@ -36,42 +37,6 @@ function tagBoxListn() {
   });
 }
 
-// ANIMATION PART
-let scroller =
-  window.requestAnimationFrame ||
-  function (callback) {
-    window.setTimeout(callback, 1000 / 60);
-  };
-
-function isElementInViewport(el) {
-  let DOMRect = el.getBoundingClientRect();
-  let inView = Math.floor(DOMRect.bottom) - window.innerHeight;
-  return inView <= DOMRect.height - 10;
-}
-
-function looper(arr, cl, rem) {
-  if (typeof arr === "array") {
-    arr.forEach((el) => el.classList.add(rem));
-    arr.forEach((element) => {
-      if (isElementInViewport(element)) {
-        element.classList.remove(rem);
-        element.classList.add(cl);
-        return true;
-      }
-    });
-  } else {
-    arr.classList.add(rem);
-    if (isElementInViewport(arr)) {
-      arr.classList.remove(rem);
-      arr.classList.add(cl);
-      return true;
-    }
-  }
-  scroller(() => {
-    looper(arr, cl, rem);
-  });
-}
-
 // Menu Part
 let clicked = 0;
 function menuResp() {
@@ -90,19 +55,6 @@ function menuResp() {
 
 // DOMCONTENT LOADED
 document.addEventListener("DOMContentLoaded", () => {
-  // Showcase video style
-  // video.style.height = "100vh";
-  // video.style.width = "100vw";
-  // video.style.objectFit = "cover";
-  // video.play();
-  // video.autoplay = true;
-
-  //Animation
-  // looper(mainLBImg, "showImg", "hideImg");
-  // looper(mainLB, "showMainLB", "hideMainLB");
-  // looper(intFact, "showMainLB", "hideMainLB");
-  // looper(mainRB, "showMainRB", "hideMainRB");
-
   // MENU
   menuResp();
 

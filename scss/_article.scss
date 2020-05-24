@@ -26,10 +26,13 @@ div.showcase-container.articlePHP-showcase {
 
 .articlephp-main-content {
   grid-template-columns: 1fr !important;
+  padding-bottom: 0 !important;
+  padding-top: 0 !important;
 }
 
 .articlephp-comments {
   margin: 1rem 0;
+  margin-bottom: 0;
   padding: 2rem;
   background: grey;
   border-radius: 1rem;
@@ -54,11 +57,11 @@ div.showcase-container.articlePHP-showcase {
 #comment-form {
   display: flex;
   flex-direction: column;
-  min-width: 50vw;
-  max-width: 60vw;
+  background: darken(#333, 15);
+  padding: 2rem 4rem;
+  margin: 0 4rem;
   justify-items: center;
   justify-content: center;
-  margin: 0 auto;
 
   input,
   textarea,
@@ -77,16 +80,6 @@ div.showcase-container.articlePHP-showcase {
     width: 30%;
     margin-left: 70%;
     cursor: pointer;
-  }
-
-  &::after {
-    content: "";
-    width: 70vw;
-    background-color: darken(#333, 15);
-    height: 100vh;
-    position: absolute;
-    z-index: -1;
-    transform: translate(-10vw, 0px);
   }
 }
 
