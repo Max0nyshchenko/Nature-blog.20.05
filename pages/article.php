@@ -39,8 +39,8 @@ require "../includes/config.php";
       </div>
       <div class="menu-wrapper">
         <ul class="menu">
-          <li><a href="#" target="_blank">Home</a></li>
-          <li><a href="pages/about-me.php">About Me</a></li>
+          <li><a href="../index.php">Home</a></li>
+          <li><a href="about-me.php">About Me</a></li>
           <li class="menuTags"><a href="#">Tags</a></li>
         </ul>
       </div>

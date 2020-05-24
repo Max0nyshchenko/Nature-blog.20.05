@@ -4,6 +4,10 @@ div.showcase-container.articlePHP-showcase {
   grid-template-rows: 8vh 0vh;
 }
 
+div.showcase-container.aboutmePHP-showcase {
+  grid-template-rows: 8vh 0vh;
+}
+
 .articlephp-article {
   border: 1px solid black;
   padding: 1rem 2rem;
@@ -24,10 +28,15 @@ div.showcase-container.articlePHP-showcase {
   }
 }
 
+.usr-name {
+  font-size: 1.5rem;
+}
+
 .articlephp-main-content {
   grid-template-columns: 1fr !important;
   padding-bottom: 0 !important;
   padding-top: 0 !important;
+  animation: fadein 0.5s ease;
 }
 
 .articlephp-comments {
@@ -87,4 +96,18 @@ div.showcase-container.articlePHP-showcase {
   text-align: center;
   width: 100%;
   margin-top: 3rem;
+}
+
+.aboutmephp-footer {
+  margin-top: 2rem;
+  width: 100%;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
