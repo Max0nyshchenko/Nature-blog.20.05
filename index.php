@@ -144,19 +144,35 @@ require "includes/config.php";
           </div>
           <div class="articles-section">
             <?php
-            $toparticles = mysqli_query($connection, "SELECT * FROM  `articles`");
+            $toparticles = mysqli_query($connection, "SELECT * FROM `articles` LIMIT 0, 5 
+            ");
             ?>
 
             <?php
-            $topArt = mysqli_fetch_array($toparticles);
-            for ($x = 1; $x >= 4; $x++) { ?>
+
+            while ($topArt = mysqli_fetch_array($toparticles)) { ?>
 
               <div class="top-articles-article">
                 <div class="name">
-                  <h2><?php echo $toparticles[$x]['title'] ?></h2>
+                  <h2><?php echo $topArt['title'] ?></h2>
                 </div>
                 <div class="category">Category</div>
                 <div class="desc">
+                  <?php
+                  $content = $topArt['text'];
+                  $dot = ".";
+
+                  $position = stripos($content, $dot);
+                  if ($position) {
+                    $offset = $position + 1;
+                    $position2 = stripos($content, $dot, $offset);
+                    $firstTwo = substr($content, 0, $position);
+
+                    echo $firstTwo . "...";
+                  } else {
+                    // do nothing
+                  }
+                  ?>
                 </div>
               </div>
 
