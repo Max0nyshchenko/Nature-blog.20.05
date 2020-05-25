@@ -100,28 +100,7 @@ require "includes/config.php";
             <img src="media/wild-157677.svg" alt="" />
             <span>Read More &#187;</span>
           </div>
-          <div class="article">
-            <h2>Article Title</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est
-              deserunt omnis voluptas tempora, nobis debitis nam similique?
-              Fugit illo maxime cum magnam esse incidunt veniam tempora,
-              omnis, quidem, aliquid doloribus!
-            </p>
-            <img src="media/wolf-2648542.svg" alt="" />
-            <span>Read More &#187;</span>
-          </div>
-          <div class="article">
-            <h2>Article Title</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est
-              deserunt omnis voluptas tempora, nobis debitis nam similique?
-              Fugit illo maxime cum magnam esse incidunt veniam tempora,
-              omnis, quidem, aliquid doloribus!
-            </p>
-            <img src="media/wolf-30695.svg" alt="" />
-            <span>Read More &#187;</span>
-          </div>
+
         </div>
 
         <div class="title">
@@ -139,29 +118,10 @@ require "includes/config.php";
             <img src="media/wild-157677.svg" alt="" />
             <span>Read More &#187;</span>
           </div>
-          <div class="article">
-            <h2>Article Title</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est
-              deserunt omnis voluptas tempora, nobis debitis nam similique?
-              Fugit illo maxime cum magnam esse incidunt veniam tempora,
-              omnis, quidem, aliquid doloribus!
-            </p>
-            <img src="media/wolf-2648542.svg" alt="" />
-            <span>Read More &#187;</span>
-          </div>
-          <div class="article">
-            <h2>Article Title</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est
-              deserunt omnis voluptas tempora, nobis debitis nam similique?
-              Fugit illo maxime cum magnam esse incidunt veniam tempora,
-              omnis, quidem, aliquid doloribus!
-            </p>
-            <img src="media/wolf-30695.svg" alt="" />
-            <span onscroll="onscroll()">Read More &#187;</span>
-          </div>
+
         </div>
+
+        <!-- Left-slide image -->
         <div class="interesting-fact-wrapper">
           <img class="interesting-fact-img" src="media/gregoire-bertaud-wK_DZlAJJ_Q-unsplash.jpg" alt="" />
           <div class="interesting-fact-text">
@@ -183,46 +143,27 @@ require "includes/config.php";
             <h2>Top Articles</h2>
           </div>
           <div class="articles-section">
-            <div class="top-articles-article">
-              <div class="name">
-                <h2>Name of the article</h2>
+            <?php
+            $toparticles = mysqli_query($connection, "SELECT * FROM  `articles`");
+            ?>
+
+            <?php
+            $topArt = mysqli_fetch_array($toparticles);
+            for ($x = 1; $x >= 4; $x++) { ?>
+
+              <div class="top-articles-article">
+                <div class="name">
+                  <h2><?php echo $toparticles[$x]['title'] ?></h2>
+                </div>
+                <div class="category">Category</div>
+                <div class="desc">
+                </div>
               </div>
-              <div class="category">Category</div>
-              <div class="desc">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Reprehenderit, officia.
-              </div>
-            </div>
-            <div class="top-articles-article">
-              <div class="name">
-                <h2>Name of the article</h2>
-              </div>
-              <div class="category">Category</div>
-              <div class="desc">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Reprehenderit, officia.
-              </div>
-            </div>
-            <div class="top-articles-article">
-              <div class="name">
-                <h2>Name of the article</h2>
-              </div>
-              <div class="category">Category</div>
-              <div class="desc">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Reprehenderit, officia.
-              </div>
-            </div>
-            <div class="top-articles-article">
-              <div class="name">
-                <h2>Name of the article</h2>
-              </div>
-              <div class="category">Category</div>
-              <div class="desc">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Reprehenderit, officia.
-              </div>
-            </div>
+
+            <?php
+            };
+            ?>
+
           </div>
         </div>
         <!-- TOP COMMENTS -->
