@@ -55,8 +55,14 @@ require "includes/config.php";
     <main id="section1" class="main-content">
       <!-- LEFT MAIN COLON -->
       <div class="main-left show-on-scroll">
+
+        <!-- Newest Articles -->
         <div class="title">Newest Articles <span> &#187;</span></div>
         <div class="articles-block">
+          <?php
+          $articles = mysqli_query($connection, "SELECT * FROM `articles`");
+          ?>
+
           <div class="article">
             <h2>Article Title</h2>
             <p>
@@ -68,6 +74,9 @@ require "includes/config.php";
             <img src="media/wild-157677.svg" alt="" />
             <span>Read More &#187;</span>
           </div>
+
+
+
           <div class="article">
             <h2>Article Title</h2>
             <p>
@@ -182,20 +191,7 @@ require "includes/config.php";
       <!-- MAIN RIGHT COLON -->
       <div class="main-right">
         <!-- TAG CLOUD -->
-        <div class="cloud">
-          <div class="tagBall">
-            <a class="tag" target="_blank" href="#">Psychological Diseases</a>
-            <a class="tag" target="_blank" href="#">Predators Behaviour</a>
-            <a class="tag" target="_blank" href="#">Other</a>
-            <a class="tag" target="_blank" href="#">Events</a>
-            <a class="tag" target="_blank" href="#">Help</a>
-            <a class="tag" target="_blank" href="#">Directory</a>
-            <a class="tag" target="_blank" href="#">Travel</a>
-            <a class="tag" target="_blank" href="#">Nature</a>
-            <a class="tag" target="_blank" href="#">Art</a>
-            <a class="tag" target="_blank" href="#">Health</a>
-          </div>
-        </div>
+        <?php include 'includes/tagCloud.php'; ?>
         <!-- TOP ARTICLES -->
         <div class="top-articles">
           <div class="top-articles-header">

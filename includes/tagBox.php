@@ -10,7 +10,7 @@ $categories = mysqli_query($connection, "SELECT * FROM `categories`")
     <?php
     while ($cat = mysqli_fetch_assoc($categories)) {
     ?>
-      <a class="tagBoxTag" href="#"><?php echo $cat['name'] ?></a>
+      <a class="tagBoxTag" href="categorie.php?id=<?php echo $cat['id']; ?>"><?php echo $cat['name'] ?></a>
     <?php
     }
     ?>
