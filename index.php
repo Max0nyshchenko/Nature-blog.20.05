@@ -63,43 +63,26 @@ require "includes/config.php";
           $articles = mysqli_query($connection, "SELECT * FROM `articles`");
           ?>
 
-          <div class="article">
-            <h2>Article Title</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est
-              deserunt omnis voluptas tempora, nobis debitis nam similique?
-              Fugit illo maxime cum magnam esse incidunt veniam tempora,
-              omnis, quidem, aliquid doloribus!
-            </p>
-            <img src="media/wild-157677.svg" alt="" />
-            <span>Read More &#187;</span>
-          </div>
 
-
-
-          <div class="article">
-            <h2>Article Title</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est
-              deserunt omnis voluptas tempora, nobis debitis nam similique?
-              Fugit illo maxime cum magnam esse incidunt veniam tempora,
-              omnis, quidem, aliquid doloribus!
-            </p>
-            <img src="media/wolf-2648542.svg" alt="" />
-            <span>Read More &#187;</span>
-          </div>
-          <div class="article">
-            <h2>Article Title</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est
-              deserunt omnis voluptas tempora, nobis debitis nam similique?
-              Fugit illo maxime cum magnam esse incidunt veniam tempora,
-              omnis, quidem, aliquid doloribus!
-            </p>
-            <img src="media/wolf-30695.svg" alt="" />
-            <span>Read More &#187;</span>
-          </div>
+          <?php
+          while ($art = mysqli_fetch_assoc($articles)) {
+          ?>
+            <div class="article">
+              <h2><?php echo $art['title']; ?></h2>
+              <p>
+                <?php echo $art['text']; ?>
+              </p>
+              <img src="media/articles/<?php echo $art['img']; ?>" alt="" />
+              <span><a href="#">Read More &#187;</a></span>
+            </div>
+          <?php
+          }
+          ?>
         </div>
+
+
+
+
         <div class="title">
           Psychological diseases among Animals<span> &#187;</span>
         </div>
