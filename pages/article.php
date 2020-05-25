@@ -2,6 +2,7 @@
 require "../includes/config.php";
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,22 +15,11 @@ require "../includes/config.php";
 </head>
 
 <body>
-  <!-- TAG CLOUD -->
-  <div class="tagBox-wrap">
-    <span class="tagBox-closer">&#215;</span>
-    <div class="tagBox">
-      <a class="tagBoxTag" target="_blank" href="#">Psychological Diseases</a>
-      <a class="tagBoxTag" target="_blank" href="#">Predators Behaviour</a>
-      <a class="tagBoxTag" target="_blank" href="#">Other</a>
-      <a class="tagBoxTag" target="_blank" href="#">Events</a>
-      <a class="tagBoxTag" target="_blank" href="#">Help</a>
-      <a class="tagBoxTag" target="_blank" href="#">Directory</a>
-      <a class="tagBoxTag" target="_blank" href="#">Travel</a>
-      <a class="tagBoxTag" target="_blank" href="#">Nature</a>
-      <a class="tagBoxTag" target="_blank" href="#">Art</a>
-      <a class="tagBoxTag" target="_blank" href="#">Health</a>
-    </div>
-  </div>
+
+
+  <!-- TAG BOX -->
+  <?php include '../includes/tagBox.php' ?>
+
   <!-- SHOWCASE -->
   <div class="showcase-container articlePHP-showcase">
     <!-- NAV -->

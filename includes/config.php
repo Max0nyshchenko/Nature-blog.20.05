@@ -5,7 +5,9 @@ $config = array(
   'db' => array(
     'server' => 'localhost',
     'username' => 'root',
-    'password' => 'root',
-    'name' => 'nature_blog'
+    'password' => '',
+    'name' => 'NatureBlog'
   )
 );
+
+require "db.php";

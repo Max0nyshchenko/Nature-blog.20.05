@@ -17,7 +17,8 @@ const commentForm = document.querySelector("#comment-form");
 // Show TagBox
 let tagBoxState = 0;
 function tagBoxListn() {
-  menuTags.addEventListener("click", () => {
+  menuTags.addEventListener("click", (e) => {
+    e.preventDefault();
     if (tagBoxState == 0) {
       tagBoxWrap.classList.add("showTag");
       clicked = 0;
