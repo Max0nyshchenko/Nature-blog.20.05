@@ -108,4 +108,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // TagBox
   tagBoxListn();
+
+  // Go to article.php on article click
+  window.onclick = (e) => {
+    let targ = e.target;
+
+    if (targ.classList.contains("article")) {
+      targ.childNodes[7].childNodes[0].click();
+    } else if (
+      targ.classList.contains("idx-art-h2") ||
+      targ.classList.contains("idx-art-para") ||
+      targ.classList.contains("idx-art-img")
+    ) {
+      targ.parentElement.childNodes[7].childNodes[0].click();
+    }
+  };
 });

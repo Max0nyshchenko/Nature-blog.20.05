@@ -67,14 +67,16 @@ require "includes/config.php";
           <?php
           while ($art = mysqli_fetch_assoc($articles)) {
           ?>
+
             <div class="article">
-              <h2><?php echo $art['title']; ?></h2>
-              <p>
+              <h2 class="idx-art-h2"><?php echo $art['title']; ?></h2>
+              <p class="idx-art-para">
                 <?php echo $art['text']; ?>
               </p>
-              <img src="media/articles/<?php echo $art['img']; ?>" alt="" />
+              <img class="idx-art-img" src="media/articles/<?php echo $art['img']; ?>min.jpg" alt="image of nature" />
               <span><a href="#">Read More &#187;</a></span>
             </div>
+
           <?php
           }
           ?>

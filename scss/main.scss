@@ -176,7 +176,6 @@ h1 {
 
       &:hover {
         color: darken($text-nav-color, 30);
-        cursor: pointer;
       }
 
       span {
@@ -192,10 +191,12 @@ h1 {
 
       .article {
         display: grid;
-        grid-template-rows: 3rem 3rem 7rem;
+        grid-template-rows: auto auto 7rem auto;
         grid-template-columns: 1fr 1fr;
         border: 2px solid black;
         padding: 1rem;
+        gap: 20px;
+        background-color: lighten($primary-color, 10);
 
         &:hover {
           background: lighten($primary-color, 20);
@@ -222,14 +223,16 @@ h1 {
         img {
           height: 100%;
           width: 100%;
-          object-fit: contain;
+          object-fit: cover;
+          border-radius: 12px;
+          border: 2px solid black;
           grid-row: 3/4;
-          grid-column: 1/2;
+          grid-column: 1/3;
           overflow: hidden;
         }
 
         span {
-          grid-row: 3/4;
+          grid-row: 4/5;
           grid-column: 2/3;
           align-self: end;
           justify-self: end;
@@ -237,6 +240,10 @@ h1 {
           &:hover {
             color: darken($text-nav-color, 30);
             cursor: pointer;
+          }
+
+          a {
+            color: whitesmoke !important;
           }
         }
       }
@@ -267,6 +274,7 @@ h1 {
 
     .top-articles {
       padding-left: 1rem;
+      overflow: hidden;
       .top-articles-header {
         h2 {
           font-size: 2rem;
@@ -283,9 +291,6 @@ h1 {
         background-color: #c4c4c4;
 
         .top-articles-article {
-          &:hover {
-            cursor: pointer;
-          }
           margin-bottom: 2.3rem;
         }
 
@@ -296,7 +301,6 @@ h1 {
           margin: 0.5rem 0;
           text-align: end;
           &:hover {
-            cursor: pointer;
             color: lighten(black, 50);
           }
         }
