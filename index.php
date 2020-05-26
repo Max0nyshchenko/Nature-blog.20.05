@@ -225,49 +225,24 @@ require "includes/config.php";
         <!-- TOP COMMENTS -->
         <div class="top-articles">
           <div class="top-articles-header">
-            <h2>Top Comments</h2>
+            <h2>Latest Comments</h2>
           </div>
           <div class="articles-section">
-            <div class="top-articles-article">
-              <div class="name">
-                <h2>Name of the comment</h2>
+
+            <?php
+            $comments = mysqli_query($connection, "SELECT * FROM `comments` ORDER BY `id` DESC LIMIT 5");
+            while ($com = mysqli_fetch_assoc($comments)) {
+            ?>
+              <div class="top-articles-article">
+                <div class="name">
+                  <h2><?php echo $com['author'] . ' ' . $com['nickname']; ?></h2>
+                </div>
+                <div class="category">Category</div>
+                <div class="desc">
+                  <?php echo $com['comment']; ?>
+                </div>
               </div>
-              <div class="category">Category</div>
-              <div class="desc">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Reprehenderit, officia.
-              </div>
-            </div>
-            <div class="top-articles-article">
-              <div class="name">
-                <h2>Name of the comment</h2>
-              </div>
-              <div class="category">Category</div>
-              <div class="desc">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Reprehenderit, officia.
-              </div>
-            </div>
-            <div class="top-articles-article">
-              <div class="name">
-                <h2>Name of the comment</h2>
-              </div>
-              <div class="category">Category</div>
-              <div class="desc">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Reprehenderit, officia.
-              </div>
-            </div>
-            <div class="top-articles-article">
-              <div class="name">
-                <h2>Name of the comment</h2>
-              </div>
-              <div class="category">Category</div>
-              <div class="desc">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Reprehenderit, officia.
-              </div>
-            </div>
+            <?php } ?>
           </div>
         </div>
       </div>
