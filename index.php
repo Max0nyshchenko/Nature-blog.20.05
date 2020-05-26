@@ -237,7 +237,10 @@ require "includes/config.php";
                 <div class="name">
                   <h2><?php echo $com['author'] . ' ' . $com['nickname']; ?></h2>
                 </div>
-                <div class="category">Category</div>
+                <?php
+
+                ?>
+                <div class="category"><?php echo $categ['name']; ?></div>
                 <div class="desc">
                   <?php echo $com['comment']; ?>
                 </div>
