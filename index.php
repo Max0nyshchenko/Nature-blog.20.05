@@ -14,6 +14,13 @@ require "includes/config.php";
 </head>
 
 <body>
+  <?php
+  $categories_q = mysqli_query($connection, "SELECT * FROM `categories`");
+  $categories = array();
+  while ($cat = mysqli_fetch_assoc($categories_q)) {
+    $categories[] = $cat;
+  }
+  ?>
   <!-- TAG BOX -->
   <?php include 'includes/tagBox.php' ?>
   <!-- SHOWCASE -->
@@ -60,7 +67,7 @@ require "includes/config.php";
         <div class="title">Newest Articles <span> &#187;</span></div>
         <div class="articles-block">
           <?php
-          $articles = mysqli_query($connection, "SELECT * FROM `articles`");
+          $articles = mysqli_query($connection, "SELECT * FROM `articles` ORDER BY `id` DESC LIMIT 10 ");
           ?>
 
 
@@ -74,7 +81,7 @@ require "includes/config.php";
                 <?php echo $art['text']; ?>
               </p>
               <img class="idx-art-img" src="media/articles/<?php echo $art['img']; ?>min.jpg" alt="image of nature" />
-              <span><a href="#">Read More &#187;</a></span>
+              <span><a href="/article.php?id=<?php echo $art['id']; ?>">Read More &#187;</a></span>
             </div>
 
           <?php
@@ -156,7 +163,16 @@ require "includes/config.php";
                 <div class="name">
                   <h2><?php echo $topArt['title'] ?></h2>
                 </div>
-                <div class="category">Category</div>
+                <?php
+                $art_cat = false;
+                foreach ($categories as $cat) {
+                  if ($cat['id'] == $topArt['categorieID']) {
+                    $art_cat = $cat;
+                    break;
+                  }
+                }
+                ?>
+                <div class="category"><a href="">Category:<?php echo $art_cat['name']; ?> </a></div>
                 <div class="desc">
                   <?php
                   $content = $topArt['text'];
