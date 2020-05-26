@@ -611,6 +611,15 @@ div.showcase-container.aboutmePHP-showcase {
   width: 100%;
 }
 
+.tagArt {
+  text-decoration: none;
+  color: #dce2e6;
+}
+
+.tagArt:hover {
+  color: white;
+}
+
 @-webkit-keyframes fadein {
   from {
     opacity: 0;
@@ -672,7 +681,7 @@ div.showcase-container.aboutmePHP-showcase {
     overflow: hidden;
   }
   body .main-content .main-right .top-articles h2 {
-    font-size: 1.6rem !important;
+    font-size: 1.3rem !important;
     padding: 2rem 0 !important;
   }
   body .main-content .main-right .top-articles .articles-section .top-articles-article .name h2 {

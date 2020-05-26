@@ -64,7 +64,11 @@ require "includes/config.php";
       <div class="main-left show-on-scroll">
 
         <!-- Newest Articles -->
-        <div class="title">Newest Articles <span> &#187;</span></div>
+        <div class="title">
+          <a href="" class="tagArt">
+            Newest Articles <span> &#187;</span>
+          </a>
+        </div>
         <div class="articles-block">
           <?php
           $articles = mysqli_query($connection, "SELECT * FROM `articles` ORDER BY `id` DESC LIMIT 10 ");
@@ -81,7 +85,7 @@ require "includes/config.php";
                 <?php echo $art['text']; ?>
               </p>
               <img class="idx-art-img" src="media/articles/<?php echo $art['img']; ?>min.jpg" alt="image of nature" />
-              <span><a href="/article.php?id=<?php echo $art['id']; ?>">Read More &#187;</a></span>
+              <span><a href="pages/article.php?id=<?php echo $art['id']; ?>">Read More &#187;</a></span>
             </div>
 
           <?php
@@ -91,40 +95,60 @@ require "includes/config.php";
 
 
 
-
+        <!-- Human&Nature Articles -->
         <div class="title">
-          Psychological diseases among Animals<span> &#187;</span>
+          <a href="pages/articles.php?categorie=1" class="tagArt">
+            <?php
+            $cat = mysqli_query($connection, "SELECT * FROM `categories` WHERE `id`=1");
+            $humanCat = mysqli_fetch_assoc($cat);
+            echo $humanCat['name'];
+            ?>
+            <span> &#187;</span>
+          </a>
         </div>
         <div class="articles-block">
-          <div class="article">
-            <h2>Article Title</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est
-              deserunt omnis voluptas tempora, nobis debitis nam similique?
-              Fugit illo maxime cum magnam esse incidunt veniam tempora,
-              omnis, quidem, aliquid doloribus!
-            </p>
-            <img src="media/wild-157677.svg" alt="" />
-            <span>Read More &#187;</span>
-          </div>
+          <?php
+          $articles = mysqli_query($connection, "SELECT * FROM `articles` WHERE `categorieID`=1 ORDER BY `id` DESC LIMIT 3");
+          while ($art = mysqli_fetch_assoc($articles)) {
+          ?>
+            <div class="article">
+              <h2><?php echo $art['title']; ?></h2>
+              <p>
+                <?php echo $art['text']; ?>
+              </p>
+              <img src="media/articles/<?php echo $art['img']; ?>min.jpg" alt="" />
+              <span><a href="pages/article.php?id=<?php echo $art['id']; ?>">Read More &#187;</a></span>
+            </div>
+          <?php } ?>
 
         </div>
 
+        <!-- WildHunt Tag Articles -->
         <div class="title">
-          Predators Behaviour in Nature..<span> &#187;</span>
+          <a class="tagArt" href="pages/articles.php?categorie=3">
+            <?php
+            $cat = mysqli_query($connection, "SELECT * FROM `categories` WHERE `id`=3");
+            $humanCat = mysqli_fetch_assoc($cat);
+            echo $humanCat['name'];
+            ?>
+            <span> &#187;</span>
+          </a>
         </div>
         <div class="articles-block">
-          <div class="article">
-            <h2>Article Title</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est
-              deserunt omnis voluptas tempora, nobis debitis nam similique?
-              Fugit illo maxime cum magnam esse incidunt veniam tempora,
-              omnis, quidem, aliquid doloribus!
-            </p>
-            <img src="media/wild-157677.svg" alt="" />
-            <span>Read More &#187;</span>
-          </div>
+          <?php
+          $articles = mysqli_query($connection, "SELECT * FROM `articles` WHERE `categorieID`=3 ORDER BY `id` DESC LIMIT 3");
+
+          while ($art = mysqli_fetch_assoc($articles)) {
+          ?>
+            <div class="article">
+              <h2><?php echo $art['title']; ?></h2>
+              <p>
+                <?php echo $art['text']; ?>
+              </p>
+              <img src="media/articles/<?php echo $art['img']; ?>min.jpg" alt="" />
+              <span><a href="pages/article.php?id=<?php echo $art['id']; ?>">Read More &#187;</a></span>
+            </div>
+          <?php } ?>
 
         </div>
 
@@ -172,7 +196,7 @@ require "includes/config.php";
                   }
                 }
                 ?>
-                <div class="category"><a href="">Category:<?php echo $art_cat['name']; ?> </a></div>
+                <div class="category"><a href="pages/article.php">Category:<?php echo $art_cat['name']; ?> </a></div>
                 <div class="desc">
                   <?php
                   $content = $topArt['text'];

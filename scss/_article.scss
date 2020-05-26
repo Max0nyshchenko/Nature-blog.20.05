@@ -103,6 +103,15 @@ div.showcase-container.aboutmePHP-showcase {
   width: 100%;
 }
 
+.tagArt {
+  text-decoration: none;
+  color: $text-nav-color;
+
+  &:hover {
+    color: white;
+  }
+}
+
 @keyframes fadein {
   from {
     opacity: 0;
