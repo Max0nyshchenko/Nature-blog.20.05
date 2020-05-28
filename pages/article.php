@@ -63,18 +63,17 @@ require "../includes/config.php";
             </div>
             <?php
         } else {
+            $art = mysqli_fetch_assoc($article);
+            mysqli_query($connection, "UPDATE `articles` SET `views` = `views` + 1 WHERE `id` = " . (int) $art['id']);
             ?>
             <!-- Article -->
             <div class="article articlephp-article">
-                <img src="../media/thomas-bonometti-dtfyRuKG7UY-unsplash.jpg" alt="" />
-                <h2>Article Title</h2>
+                <img src="../media/articles/<?php echo $art['img']; ?>.jpg" alt="" />
+                <h2><?php echo $art['title']; ?>></h2>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est
-                    deserunt omnis voluptas tempora, nobis debitis nam similique?
-                    Fugit illo maxime cum magnam esse incidunt veniam tempora,
-                    omnis, quidem, aliquid doloribus!
+                    <?php echo $art['text']; ?>
                 </p>
-                <p class="articlephp-views">20202 views</p>
+                <p class="articlephp-views"><?php echo $art['views']; ?> views</p>
             </div>
         <?php
         }
@@ -86,21 +85,15 @@ require "../includes/config.php";
       <div class="articlephp-comments-wrap">
         <h1>Comment Zone</h1>
         <div class="articlephp-comments">
+            <?php
+                $comment = mysqli_query($connection, "SELECT * FROM `comments` WHERE `articleID` = " . (int) $art['id']);
+            ?>
           <div class="articlephp-comment">
             <img src="../media/wolf-30695.svg" alt="">
             <div class="usr-name">Soem Uno</div>
             <div class="usr-comment">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi error magni vitae, at dignissimos ut itaque? Laboriosam, reiciendis. Officia debitis excepturi perspiciatis vero nulla pariatur iusto nemo quis recusandae voluptatibus?</div>
           </div>
-          <div class="articlephp-comment">
-            <img src="../media/wolf-30695.svg" alt="">
-            <div class="usr-name">Soem Uno</div>
-            <div class="usr-comment">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi error magni vitae, at dignissimos ut itaque? Laboriosam, reiciendis. Officia debitis excepturi perspiciatis vero nulla pariatur iusto nemo quis recusandae voluptatibus?</div>
-          </div>
-          <div class="articlephp-comment">
-            <img src="../media/wolf-30695.svg" alt="">
-            <div class="usr-name">Soem Uno</div>
-            <div class="usr-comment">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi error magni vitae, at dignissimos ut itaque? Laboriosam, reiciendis. Officia debitis excepturi perspiciatis vero nulla pariatur iusto nemo quis recusandae voluptatibus?</div>
-          </div>
+
         </div>
       </div>
 
