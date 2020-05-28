@@ -20,6 +20,7 @@ require "../includes/config.php";
   <!-- TAG BOX -->
   <?php include '../includes/tagBox.php' ?>
 
+
   <!-- SHOWCASE -->
   <div class="showcase-container articlePHP-showcase">
     <!-- NAV -->
@@ -43,21 +44,43 @@ require "../includes/config.php";
   </div>
 
   <!-- MAIN SECTION -->
+
   <section class="main-content-wrapper">
     <main id="section1" class="main-content articlephp-main-content">
 
-      <!-- Article -->
-      <div class="article articlephp-article">
-        <img src="../media/thomas-bonometti-dtfyRuKG7UY-unsplash.jpg" alt="" />
-        <h2>Article Title</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est
-          deserunt omnis voluptas tempora, nobis debitis nam similique?
-          Fugit illo maxime cum magnam esse incidunt veniam tempora,
-          omnis, quidem, aliquid doloribus!
-        </p>
-        <p class="articlephp-views">20202 views</p>
-      </div>
+<!--        Article          -->
+        <?php $article = mysqli_query($connection, "SELECT * FROM `articles` WHERE `id` = " . (int) $_GET['id'] );
+        if(mysqli_num_rows($article) <= 0) {
+            ?>
+            <!-- Article -->
+            <div class="article articlephp-article">
+<!--                <img src="../media/thomas-bonometti-dtfyRuKG7UY-unsplash.jpg" alt="" />-->
+                <h2>Article not found...</h2>
+                <p>
+
+                </p>
+                <p class="articlephp-views">20202 views</p>
+            </div>
+            <?php
+        } else {
+            ?>
+            <!-- Article -->
+            <div class="article articlephp-article">
+                <img src="../media/thomas-bonometti-dtfyRuKG7UY-unsplash.jpg" alt="" />
+                <h2>Article Title</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est
+                    deserunt omnis voluptas tempora, nobis debitis nam similique?
+                    Fugit illo maxime cum magnam esse incidunt veniam tempora,
+                    omnis, quidem, aliquid doloribus!
+                </p>
+                <p class="articlephp-views">20202 views</p>
+            </div>
+        <?php
+        }
+        ?>
+
+
 
       <!-- Comment -->
       <div class="articlephp-comments-wrap">

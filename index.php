@@ -112,11 +112,11 @@ require "includes/config.php";
           while ($art = mysqli_fetch_assoc($articles)) {
           ?>
             <div class="article">
-              <h2><?php echo $art['title']; ?></h2>
-              <p>
+              <h2 class="idx-art-h2"><?php echo $art['title']; ?></h2>
+              <p class="idx-art-para">
                 <?php echo $art['text']; ?>
               </p>
-              <img src="media/articles/<?php echo $art['img']; ?>min.jpg" alt="" />
+              <img class="idx-art-img" src="media/articles/<?php echo $art['img']; ?>min.jpg" alt="" />
               <span><a href="pages/article.php?id=<?php echo $art['id']; ?>">Read More &#187;</a></span>
             </div>
           <?php } ?>
@@ -141,11 +141,11 @@ require "includes/config.php";
           while ($art = mysqli_fetch_assoc($articles)) {
           ?>
             <div class="article">
-              <h2><?php echo $art['title']; ?></h2>
-              <p>
+              <h2 class="idx-art-h2"><?php echo $art['title']; ?></h2>
+              <p class="idx-art-para">
                 <?php echo $art['text']; ?>
               </p>
-              <img src="media/articles/<?php echo $art['img']; ?>min.jpg" alt="" />
+              <img class="idx-art-img" src="media/articles/<?php echo $art['img']; ?>min.jpg" alt="" />
               <span><a href="pages/article.php?id=<?php echo $art['id']; ?>">Read More &#187;</a></span>
             </div>
           <?php } ?>
@@ -196,7 +196,7 @@ require "includes/config.php";
                   }
                 }
                 ?>
-                <div class="category"><a href="pages/article.php">Category:<?php echo $art_cat['name']; ?> </a></div>
+                <div class="category"><a href="pages/article.php">Category: <?php echo $art_cat['name']; ?> </a></div>
                 <div class="desc">
                   <?php
                   $content = $topArt['text'];
