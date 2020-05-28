@@ -48,36 +48,36 @@ require "../includes/config.php";
   <section class="main-content-wrapper">
     <main id="section1" class="main-content articlephp-main-content">
 
-<!--        Article          -->
-        <?php $article = mysqli_query($connection, "SELECT * FROM `articles` WHERE `id` = " . (int) $_GET['id'] );
-        if(mysqli_num_rows($article) <= 0) {
-            ?>
-            <!-- Article -->
-            <div class="article articlephp-article">
-<!--                <img src="../media/thomas-bonometti-dtfyRuKG7UY-unsplash.jpg" alt="" />-->
-                <h2>Article not found...</h2>
-                <p>
+      <!--        Article          -->
+      <?php $article = mysqli_query($connection, "SELECT * FROM `articles` WHERE `id` = " . (int) $_GET['id']);
+      if (mysqli_num_rows($article) <= 0) {
+      ?>
+        <!-- Article -->
+        <div class="article articlephp-article">
+          <!--                <img src="../media/thomas-bonometti-dtfyRuKG7UY-unsplash.jpg" alt="" />-->
+          <h2>Article not found...</h2>
+          <p>
 
-                </p>
-                <p class="articlephp-views">20202 views</p>
-            </div>
-            <?php
-        } else {
-            $art = mysqli_fetch_assoc($article);
-            mysqli_query($connection, "UPDATE `articles` SET `views` = `views` + 1 WHERE `id` = " . (int) $art['id']);
-            ?>
-            <!-- Article -->
-            <div class="article articlephp-article">
-                <img src="../media/articles/<?php echo $art['img']; ?>.jpg" alt="" />
-                <h2><?php echo $art['title']; ?>></h2>
-                <p>
-                    <?php echo $art['text']; ?>
-                </p>
-                <p class="articlephp-views"><?php echo $art['views']; ?> views</p>
-            </div>
-        <?php
-        }
-        ?>
+          </p>
+          <p class="articlephp-views">20202 views</p>
+        </div>
+      <?php
+      } else {
+        $art = mysqli_fetch_assoc($article);
+        mysqli_query($connection, "UPDATE `articles` SET `views` = `views` + 1 WHERE `id` = " . (int) $art['id']);
+      ?>
+        <!-- Article -->
+        <div class="article articlephp-article">
+          <img src="../media/articles/<?php echo $art['img']; ?>.jpg" alt="" />
+          <h2><?php echo $art['title']; ?>></h2>
+          <p>
+            <?php echo $art['text']; ?>
+          </p>
+          <p class="articlephp-views"><?php echo $art['views']; ?> views</p>
+        </div>
+      <?php
+      }
+      ?>
 
 
 
@@ -85,37 +85,59 @@ require "../includes/config.php";
       <div class="articlephp-comments-wrap">
         <h1>Comment Zone</h1>
         <div class="articlephp-comments">
-            <a style="color: #fff; text-decoration: none; text-align: end;" href="#comment-form"><h2>Leave a comment --></h2></a>
+          <a style="color: #fff; text-decoration: none; text-align: end;" href="#comment-form">
+            <h2>Leave a comment --></h2>
+          </a>
+          <?php
+          $comments = mysqli_query($connection, "SELECT * FROM `comments` WHERE `articleID` = " . (int) $art['id'] .
+            " ORDER BY `id` DESC");
+          if (mysqli_num_rows($comments) > 0) {
+            while ($comment = mysqli_fetch_assoc($comments)) {
+          ?>
+              <div class="articlephp-comment">
+                <img src="../media/<?php echo $comment['img']; ?>.svg" alt="">
+                <div class="usr-name"><?php echo $comment['author'] . ' ' . $comment['nickname']; ?></div>
+                <div class="usr-comment"><?php echo $comment['comment']; ?></div>
+              </div>
             <?php
-                $comments = mysqli_query($connection, "SELECT * FROM `comments` WHERE `articleID` = " . (int) $art['id'] .
-                " ORDER BY `id` DESC");
-                if(mysqli_num_rows($comments) > 0 ){
-                while($comment = mysqli_fetch_assoc($comments)) {
-                ?>
-                <div class="articlephp-comment">
-                    <img src="../media/<?php echo $comment['img']; ?>.svg" alt="">
-                    <div class="usr-name"><?php echo $comment['author'] . ' ' . $comment['nickname']; ?></div>
-                    <div class="usr-comment"><?php echo $comment['comment']; ?></div>
-                </div>
-            <?php
-                }
-            } else {
-                    ?>
-                    <h2>Make a first comment:</h2>
-                    <?php
-                }
-                ?>
+            }
+          } else {
+            ?>
+            <h2>Make a first comment:</h2>
+          <?php
+          }
+          ?>
 
 
         </div>
       </div>
 
       <!-- LeaveComment Area -->
-      <form id="comment-form" action="">
-        <input type="text" name="username" id="username" placeholder="Username...">
-        <input type="text" name="nickname" id="nickname" placeholder="Nickname...">
-        <textarea name="comment_php" id="com" cols="30" rows="10" placeholder="Write your comment right here..."></textarea>
-        <button type="submit">Submit</button>
+      <form id="comment-form" method="POST" action="article.php?id=<?php echo $art['id']; ?>#comment-form">
+        <?php
+        if (isset($_POST['do_post'])) {
+          $errors = array();
+
+          if ($_POST['username'] == '') {
+            $errors[]  = 'Write the Username!';
+          };
+          if ($_POST['nickname'] == '') {
+            $errors[]  = 'Write the Nickname!';
+          };
+          if ($_POST['comment_php'] == '') {
+            $errors[]  = 'Write the Comment!';
+          };
+
+          if (empty($errors)) {
+          } else {
+            echo '<span style="margin-bottom: 10px; font-weight: bold; font-size: 1.2rem;">' . $errors['0'] . '</span>' . '<hr />';
+          }
+        }
+        ?>
+        <input type="text" name="username" id="username" value="<?php echo $_POST['username']; ?>" placeholder="Username...">
+        <input type="text" name="nickname" id="nickname" value="<?php echo $_POST['nickname']; ?>" placeholder="Nickname...">
+        <textarea name="comment_php" id="com" cols="30" rows="10" placeholder="Write your comment right here..."><?php echo $_POST['comment_php']; ?></textarea>
+        <input type="submit" name="do_post" value="Submit">
       </form>
     </main>
   </section>

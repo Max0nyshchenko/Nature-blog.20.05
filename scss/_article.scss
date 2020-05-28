@@ -53,11 +53,13 @@ div.showcase-container.aboutmePHP-showcase {
   margin: 0.3rem 0;
   padding: 0.5rem;
   display: grid;
-  grid-template-columns: 15vw 2fr;
+  grid-template-columns: 16vh auto;
   grid-template-rows: auto auto;
 
   img {
-    width: 100%;
+    padding: 5px;
+    width: 16vh;
+    height: 16vh;
     grid-row-start: 1;
     grid-row-end: 3;
   }
@@ -71,18 +73,21 @@ div.showcase-container.aboutmePHP-showcase {
   margin: 0 4rem;
   justify-items: center;
   justify-content: center;
+  color: #a73636;
 
   input,
   textarea,
   button {
     margin: 0.3rem 0;
+    font-size: 1rem;
+    padding: 0.2rem;
   }
 
   textarea {
     resize: vertical;
   }
 
-  button {
+  input[type="submit"] {
     font-size: 1rem;
     font-weight: bold;
     padding: 0.5rem 1rem;

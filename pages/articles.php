@@ -82,7 +82,7 @@ require "../includes/config.php";
       </div>
 
       <!-- LeaveComment Area -->
-      <form id="comment-form" action="">
+      <form id="comment-form" method="POST" action="">
         <input type="text" name="username" id="username" placeholder="Username...">
         <input type="text" name="nickname" id="nickname" placeholder="Nickname...">
         <textarea name="comment_php" id="com" cols="30" rows="10" placeholder="Write your comment right here..."></textarea>

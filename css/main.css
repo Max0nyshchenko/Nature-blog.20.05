@@ -551,14 +551,16 @@ div.showcase-container.aboutmePHP-showcase {
   padding: 0.5rem;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 15vw 2fr;
-      grid-template-columns: 15vw 2fr;
+  -ms-grid-columns: 16vh auto;
+      grid-template-columns: 16vh auto;
   -ms-grid-rows: auto auto;
       grid-template-rows: auto auto;
 }
 
 .articlephp-comment img {
-  width: 100%;
+  padding: 5px;
+  width: 16vh;
+  height: 16vh;
   -ms-grid-row: 1;
       grid-row-start: 1;
   grid-row-end: 3;
@@ -579,19 +581,22 @@ div.showcase-container.aboutmePHP-showcase {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  color: #a73636;
 }
 
 #comment-form input,
 #comment-form textarea,
 #comment-form button {
   margin: 0.3rem 0;
+  font-size: 1rem;
+  padding: 0.2rem;
 }
 
 #comment-form textarea {
   resize: vertical;
 }
 
-#comment-form button {
+#comment-form input[type="submit"] {
   font-size: 1rem;
   font-weight: bold;
   padding: 0.5rem 1rem;
