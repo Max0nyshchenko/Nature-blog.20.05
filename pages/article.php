@@ -86,13 +86,18 @@ require "../includes/config.php";
         <h1>Comment Zone</h1>
         <div class="articlephp-comments">
             <?php
-                $comment = mysqli_query($connection, "SELECT * FROM `comments` WHERE `articleID` = " . (int) $art['id']);
-            ?>
-          <div class="articlephp-comment">
-            <img src="../media/wolf-30695.svg" alt="">
-            <div class="usr-name">Soem Uno</div>
-            <div class="usr-comment">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi error magni vitae, at dignissimos ut itaque? Laboriosam, reiciendis. Officia debitis excepturi perspiciatis vero nulla pariatur iusto nemo quis recusandae voluptatibus?</div>
-          </div>
+                $comments = mysqli_query($connection, "SELECT * FROM `comments` WHERE `articleID` = " . (int) $art['id']);
+            while($comment = mysqli_fetch_assoc($comments)) {
+                ?>
+                <div class="articlephp-comment">
+                    <img src="../media/wolf-30695.svg" alt="">
+                    <div class="usr-name">Soem Uno</div>
+                    <div class="usr-comment">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi error magni vitae, at dignissimos ut itaque? Laboriosam, reiciendis. Officia debitis excepturi perspiciatis vero nulla pariatur iusto nemo quis recusandae voluptatibus?</div>
+                </div>
+            <?php
+            }
+                ?>
+
 
         </div>
       </div>
