@@ -3,7 +3,7 @@
 $config = array(
   'title' => 'Nature Blog',
   'db' => array(
-    'server' => 'localhost',
+    'server' => '127.0.0.1',
     'username' => 'root',
     'password' => '',
     'name' => 'NatureBlog'

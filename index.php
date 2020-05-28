@@ -238,9 +238,22 @@ require "includes/config.php";
                   <h2><?php echo $com['author'] . ' ' . $com['nickname']; ?></h2>
                 </div>
                 <?php
-
+                $newArt = mysqli_query($connection, "SELECT * FROM `articles`");
+                while($Art = mysqli_fetch_assoc($newArt)) {
+                    if($com['articleID'] == $Art['id']) {
+                      $comCatID = $Art['categorieID'];
+                      break;
+                    };
+                };
+                $commentCategorie = mysqli_query($connection, "SELECT * FROM `categories`");
+                while($comCat = mysqli_fetch_assoc($commentCategorie)) {
+                    if($comCatID == $comCat['id']) {
+                        $rightCat = $comCat;
+                        break;
+                    }
+                }
                 ?>
-                <div class="category"><?php echo $categ['name']; ?></div>
+                  <div class="category"><a href="#">Categorie: <?php echo $rightCat['name']; ?></a></div>
                 <div class="desc">
                   <?php echo $com['comment']; ?>
                 </div>
