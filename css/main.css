@@ -625,6 +625,12 @@ div.showcase-container.aboutmePHP-showcase {
   color: white;
 }
 
+.articlephplink {
+  font-size: 1rem;
+  color: #91d0e4;
+  text-decoration: none;
+}
+
 @-webkit-keyframes fadein {
   from {
     opacity: 0;

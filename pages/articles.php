@@ -47,54 +47,50 @@ require "../includes/config.php";
     <main id="section1" class="main-content articlephp-main-content">
 
       <!-- Article -->
-      <div class="article articlephp-article">
-        <img src="../media/thomas-bonometti-dtfyRuKG7UY-unsplash.jpg" alt="" />
-        <h2>Article Title</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est
-          deserunt omnis voluptas tempora, nobis debitis nam similique?
-          Fugit illo maxime cum magnam esse incidunt veniam tempora,
-          omnis, quidem, aliquid doloribus!
-        </p>
-        <p class="articlephp-views">20202 views</p>
+      <div style="min-height: 80vh; margin: 2vh 0;" class="article articlephp-article">
+        <h2>List of articles:</h2>
+        <ul>
+          <?php
+          $perPage = 20;
+          $page = 1;
+
+          if (isset($_GET['page'])) {
+            $page  = (int) $_GET['page'];
+          };
+
+          $totalPages = ceil($totalCount / $perPage);
+          if ($page <= 1 || $page > $totalPages) {
+            $page = 1;
+          }
+
+
+          $totalCountQ = mysqli_query($connection, "SELECT COUNT(`id`) AS `totalCount` from `articles`");
+          $totalCount = mysqli_fetch_assoc($totalCountQ);
+          $totalCount = $totalCount['totalCount'];
+
+          $offset = ($perPage * $page) - $perPage;
+
+          $articles = mysqli_query($connection, "SELECT * FROM `articles` ORDER BY `id` DESC LIMIT $offset,$perPage");
+          while ($art = mysqli_fetch_assoc($articles)) {
+          ?>
+
+            <li><a class="articlephplink" href="article.php?id=<?php echo $art['id']; ?>"><?php echo $art['title']; ?></a></li>
+
+          <?php
+          }
+          ?>
+
+        </ul>
       </div>
 
-      <!-- Comment -->
-      <div class="articlephp-comments-wrap">
-        <h1>Comment Zone</h1>
-        <div class="articlephp-comments">
-          <div class="articlephp-comment">
-            <img src="../media/wolf-30695.svg" alt="">
-            <div class="usr-name">Soem Uno</div>
-            <div class="usr-comment">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi error magni vitae, at dignissimos ut itaque? Laboriosam, reiciendis. Officia debitis excepturi perspiciatis vero nulla pariatur iusto nemo quis recusandae voluptatibus?</div>
-          </div>
-          <div class="articlephp-comment">
-            <img src="../media/wolf-30695.svg" alt="">
-            <div class="usr-name">Soem Uno</div>
-            <div class="usr-comment">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi error magni vitae, at dignissimos ut itaque? Laboriosam, reiciendis. Officia debitis excepturi perspiciatis vero nulla pariatur iusto nemo quis recusandae voluptatibus?</div>
-          </div>
-          <div class="articlephp-comment">
-            <img src="../media/wolf-30695.svg" alt="">
-            <div class="usr-name">Soem Uno</div>
-            <div class="usr-comment">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi error magni vitae, at dignissimos ut itaque? Laboriosam, reiciendis. Officia debitis excepturi perspiciatis vero nulla pariatur iusto nemo quis recusandae voluptatibus?</div>
-          </div>
-        </div>
-      </div>
 
-      <!-- LeaveComment Area -->
-      <form id="comment-form" method="POST" action="">
-        <input type="text" name="username" id="username" placeholder="Username...">
-        <input type="text" name="nickname" id="nickname" placeholder="Nickname...">
-        <textarea name="comment_php" id="com" cols="30" rows="10" placeholder="Write your comment right here..."></textarea>
-        <button type="submit">Submit</button>
-      </form>
+
     </main>
-  </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <h2>Footer</h2>
-  </footer>
+    <!-- FOOTER -->
+    <footer>
+      <h2>Footer</h2>
+    </footer>
 </body>
 <script src="../js/article.js"></script>
 
