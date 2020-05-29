@@ -631,6 +631,20 @@ div.showcase-container.aboutmePHP-showcase {
   text-decoration: none;
 }
 
+.paginator {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.paginator a {
+  color: white;
+  text-decoration: none;
+}
+
 @-webkit-keyframes fadein {
   from {
     opacity: 0;

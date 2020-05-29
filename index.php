@@ -65,7 +65,7 @@ require "includes/config.php";
 
         <!-- Newest Articles -->
         <div class="title">
-          <a href="" class="tagArt">
+          <a href="pages/articles.php" class="tagArt">
             Newest Articles <span> &#187;</span>
           </a>
         </div>
@@ -253,7 +253,7 @@ require "includes/config.php";
                   }
                 }
                 ?>
-                <div class="category"><a href="#">Categorie: <?php echo $rightCat['name']; ?></a></div>
+                <div class="category"><a href="pages/articles.php">Categorie: <?php echo $rightCat['name']; ?></a></div>
                 <div class="desc">
                   <?php echo $com['comment']; ?>
                 </div>

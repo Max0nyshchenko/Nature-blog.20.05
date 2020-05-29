@@ -69,17 +69,33 @@ require "../includes/config.php";
             $page = 1;
           }
 
+          $articlesExist = true;
+
 
           $offset = ($perPage * $page) - $perPage;
 
           $articles = mysqli_query($connection, "SELECT * FROM `articles` ORDER BY `id` DESC LIMIT $offset,$perPage");
+          if (mysqli_num_rows($articles) <= 0) {
+            echo "No atricles found..";
+            $articlesExist = false;
+          }
           while ($art = mysqli_fetch_assoc($articles)) {
           ?>
 
             <li><a class="articlephplink" href="article.php?id=<?php echo $art['id']; ?>"><?php echo $art['title']; ?></a></li>
 
           <?php
-          }
+          };
+          if ($articlesExist == true) {
+            echo '<div class="paginator">';
+            if ($page > 1) {
+              echo '<a href="articles.php?page=' . ($page - 1) . '">Previous page</a>';
+            };
+            if ($page < $totalPages) {
+              echo '<a href="articles.php?page=' . ($page + 1) . '">Next page</a>';
+            }
+            echo '</div>';
+          };
           ?>
 
         </ul>

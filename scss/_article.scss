@@ -123,6 +123,16 @@ div.showcase-container.aboutmePHP-showcase {
   text-decoration: none;
 }
 
+.paginator {
+  display: flex;
+  justify-content: space-evenly;
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+}
+
 @keyframes fadein {
   from {
     opacity: 0;
