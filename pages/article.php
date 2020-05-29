@@ -129,6 +129,13 @@ require "../includes/config.php";
           };
 
           if (empty($errors)) {
+
+            $thisarticle = mysqli_query($connection, "SELECT * FROM `articles` WHERE `id` = " . (int) $_GET['id']);
+            $thearticle = mysqli_fetch_assoc($thisarticle);
+
+            mysqli_query($connection, "INSERT INTO `comments`(`articleID`, `author`, `nickname`, `comment`) VALUES (" . $thearticle['id'] . ", '" . $_POST['username'] . "', '" . $_POST['nickname'] . "', '" . $_POST['comment_php'] . "')");
+
+            echo '<span style="color: green; margin-bottom: 10px; font-weight: bold; font-size: 1.2rem;">' . ' Comment successfully added!' . '</span>' . '<hr />';
           } else {
             echo '<span style="margin-bottom: 10px; font-weight: bold; font-size: 1.2rem;">' . $errors['0'] . '</span>' . '<hr />';
           }
