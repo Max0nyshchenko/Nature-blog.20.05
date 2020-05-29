@@ -58,15 +58,17 @@ require "../includes/config.php";
             $page  = (int) $_GET['page'];
           };
 
-          $totalPages = ceil($totalCount / $perPage);
-          if ($page <= 1 || $page > $totalPages) {
-            $page = 1;
-          }
 
 
           $totalCountQ = mysqli_query($connection, "SELECT COUNT(`id`) AS `totalCount` from `articles`");
           $totalCount = mysqli_fetch_assoc($totalCountQ);
           $totalCount = $totalCount['totalCount'];
+
+          $totalPages = ceil($totalCount / $perPage);
+          if ($page <= 1 || $page > $totalPages) {
+            $page = 1;
+          }
+
 
           $offset = ($perPage * $page) - $perPage;
 
