@@ -97,7 +97,7 @@ require "includes/config.php";
 
         <!-- Human&Nature Articles -->
         <div class="title">
-          <a href="pages/articles.php?categorie=1" class="tagArt">
+          <a href="pages/articles-cat.php?categorie=1" class="tagArt">
             <?php
             $cat = mysqli_query($connection, "SELECT * FROM `categories` WHERE `id`=1");
             $humanCat = mysqli_fetch_assoc($cat);
@@ -196,7 +196,7 @@ require "includes/config.php";
                   }
                 }
                 ?>
-                <div class="category"><a href="pages/article.php">Category: <?php echo $art_cat['name']; ?> </a></div>
+                <div class="category"><a href="pages/articles-cat.php?categorie=<?php echo $art_cat['id']; ?>">Category: <?php echo $art_cat['name']; ?> </a></div>
                 <div class="desc">
                   <?php
                   $content = $topArt['text'];
@@ -253,7 +253,7 @@ require "includes/config.php";
                   }
                 }
                 ?>
-                <div class="category"><a href="pages/articles.php">Categorie: <?php echo $rightCat['name']; ?></a></div>
+                <div class="category"><a href="pages/articles-cat.php?categorie=<?php echo $rightCat['id']; ?>">Categorie: <?php echo $rightCat['name']; ?></a></div>
                 <div class="desc">
                   <?php echo $com['comment']; ?>
                 </div>

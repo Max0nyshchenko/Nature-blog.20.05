@@ -138,9 +138,23 @@ require "../includes/config.php";
           }
         }
         ?>
-        <input type="text" name="username" id="username" value="<?php echo $_POST['username']; ?>" placeholder="Username...">
-        <input type="text" name="nickname" id="nickname" value="<?php echo $_POST['nickname']; ?>" placeholder="Nickname...">
-        <textarea name="comment_php" id="com" cols="30" rows="10" placeholder="Write your comment right here..."><?php echo $_POST['comment_php']; ?></textarea>
+        <input type="text" name="username" id="username" value="<?php
+                                                                if (isset($_POST['username'])) {
+                                                                  echo $_POST['username'];
+                                                                };
+                                                                ?>" placeholder="Username...">
+        <input type="text" name="nickname" id="nickname" value="<?php
+                                                                if (isset($_POST['nickname'])) {
+                                                                  echo $_POST['nickname'];
+                                                                };
+                                                                ?>" placeholder="Nickname...">
+        <textarea name="comment_php" id="com" cols="30" rows="10" placeholder="Write your comment right here..."><?php
+
+                                                                                                                  if (isset($_POST['comment_php'])) {
+                                                                                                                    echo $_POST['comment_php'];
+                                                                                                                  };
+
+                                                                                                                  ?></textarea>
         <input type="submit" name="do_post" value="Submit">
       </form>
     </main>
