@@ -61,10 +61,10 @@ require "../includes/config.php";
 
 
 
-          $totalCountQ = mysqli_query($connection, "SELECT * FROM `articles` WHERE `categorieID`= " . $categorie . ";");
+          $totalCountQ = mysqli_query($connection, "SELECT COUNT(`id`) AS `totalCat` from `articles` WHERE `categorieID`=" . $categorie . ";");
           $totalCat = mysqli_fetch_assoc($totalCountQ);
           $totalCat = $totalCat['totalCat'];
-          console_log($totalCat);
+
 
           $totalPages = ceil($totalCat / $perPage);
           if ($page <= 1 || $page > $totalPages) {
@@ -76,7 +76,7 @@ require "../includes/config.php";
 
           $offset = ($perPage * $page) - $perPage;
 
-          $articles = mysqli_query($connection, "SELECT * FROM `articles` ORDER BY `id` DESC LIMIT $offset,$perPage");
+          $articles = mysqli_query($connection, "SELECT * FROM `articles` WHERE `categorieID` = " . $categorie . " ORDER BY `id` DESC LIMIT $offset,$perPage");
           if (mysqli_num_rows($articles) <= 0) {
             echo "No atricles found..";
             $articlesExist = false;
