@@ -54,12 +54,9 @@ require "../includes/config.php";
       ?>
         <!-- Article -->
         <div class="article articlephp-article">
-          <!--                <img src="../media/thomas-bonometti-dtfyRuKG7UY-unsplash.jpg" alt="" />-->
-          <h2>Article not found...</h2>
-          <p>
 
-          </p>
-          <p class="articlephp-views">20202 views</p>
+          <h2>Article not found...</h2>
+
         </div>
       <?php
       } else {
