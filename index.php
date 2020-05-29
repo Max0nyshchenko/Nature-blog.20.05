@@ -125,7 +125,7 @@ require "includes/config.php";
 
         <!-- WildHunt Tag Articles -->
         <div class="title">
-          <a class="tagArt" href="pages/articles.php?categorie=3">
+          <a class="tagArt" href="pages/articles-cat.php?categorie=3">
             <?php
             $cat = mysqli_query($connection, "SELECT * FROM `categories` WHERE `id`=3");
             $humanCat = mysqli_fetch_assoc($cat);

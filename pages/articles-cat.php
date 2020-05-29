@@ -60,11 +60,13 @@ require "../includes/config.php";
 
 
 
-          $totalCountQ = mysqli_query($connection, "SELECT COUNT(`id`) AS `totalCount` from `articles`");
-          $totalCount = mysqli_fetch_assoc($totalCountQ);
-          $totalCount = $totalCount['totalCount'];
 
-          $totalPages = ceil($totalCount / $perPage);
+          $totalCountQ = mysqli_query($connection, "SELECT * FROM `articles` WHERE `categorieID`= " . $categorie . ";");
+          $totalCat = mysqli_fetch_assoc($totalCountQ);
+          $totalCat = $totalCat['totalCat'];
+          console_log($totalCat);
+
+          $totalPages = ceil($totalCat / $perPage);
           if ($page <= 1 || $page > $totalPages) {
             $page = 1;
           }
